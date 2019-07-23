@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <SpecialThingFilterDef>
+        <defName>AllowNamedWeapons</defName>
+        <label>allow named weapons</label>
+        <parentCategory>Weapons</parentCategory>
+        <allowedByDefault>true</allowedByDefault>
+        <saveKey>allowNamedWeapons</saveKey>
+        <workerClass>RenameYourWeapons.SpecialThingFilterWorker_AllowNamedWeapons</workerClass>
+    </SpecialThingFilterDef>
+
+    <SpecialThingFilterDef>
+        <defName>AllowUnnamedWeapons</defName>
+        <label>allow unnamed weapons</label>
+        <parentCategory>Weapons</parentCategory>
+        <allowedByDefault>true</allowedByDefault>
+        <saveKey>allowUnnamedWeapons</saveKey>
+        <workerClass>RenameYourWeapons.SpecialThingFilterWorker_AllowUnnamedWeapons</workerClass>
+    </SpecialThingFilterDef>
+
+</Defs>
