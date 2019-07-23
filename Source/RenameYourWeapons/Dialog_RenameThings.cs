@@ -16,6 +16,17 @@ namespace RenameYourWeapons
         {
             this.renamableComps = renamableComps;
             curName = renamableComps.Count == 1 ? renamableComps[0].name : String.Empty;
+
+            if (renamableComps.Count == 1)
+            {
+                var renamable = renamableComps[0];
+                if (renamable.Named)
+                    curName = renamable.name;
+                else
+                    curName = renamable.parent.LabelCapNoCount;
+            }
+            else
+                curName = String.Empty;
         }
 
         protected override AcceptanceReport NameIsValid(string name)

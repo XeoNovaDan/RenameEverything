@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+    <RenameYourWeapon.RenameWeapon_Description>Change the name of this weapon to one of your liking.</RenameYourWeapon.RenameWeapon_Description>
+
+    <RenameYourWeapon.RemoveName>Remove name</RenameYourWeapon.RemoveName>
+    <RenameYourWeapon.RemoveName_Description>Remove the name that you've given to this weapon.</RenameYourWeapon.RemoveName_Description>
+
+</LanguageData>

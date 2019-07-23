@@ -15,7 +15,15 @@ namespace RenameYourWeapons
         private string cachedLabel;
         public string name;
 
-        public bool Named => !name.NullOrEmpty();
+        public bool Named
+        {
+            get => !name.NullOrEmpty();
+            set
+            {
+                if (!value)
+                    name = String.Empty;
+            }
+        }
 
         public override string TransformLabel(string label)
         {
@@ -29,8 +37,21 @@ namespace RenameYourWeapons
             {
                 renamable = this,
                 defaultLabel = "Rename".Translate(),
+                defaultDesc = "RenameYourWeapon.RenameWeapon_Description".Translate(),
                 icon = TexButton.RenameTex,
+                hotKey = KeyBindingDefOf.Misc1
             };
+
+            if (Named)
+            {
+                yield return new Command_Action()
+                {
+                    defaultLabel = "RenameYourWeapon.RemoveName".Translate(),
+                    defaultDesc = "RenameYourWeapon.RemoveName_Description".Translate(),
+                    icon = TexButton.DeleteX,
+                    action = () => Named = false
+                };
+            }
         }
 
         public override void PostExposeData()
