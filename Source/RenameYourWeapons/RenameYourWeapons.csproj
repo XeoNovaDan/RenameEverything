@@ -31,6 +31,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="0Harmony, Version=1.2.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\1.0\Assemblies\0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
@@ -48,8 +53,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Command_RenameWeapon.cs" />
+    <Compile Include="RenameYourWeaponsSettings.cs" />
+    <Compile Include="RenameYourWeapons.cs" />
+    <Compile Include="HarmonyPatches\Patch_Pawn.cs" />
     <Compile Include="SpecialThingFilters\SpecialThingFilterWorker_AllowUnnamedWeapons.cs" />
     <Compile Include="SpecialThingFilters\SpecialThingFilterWorker_AllowNamedWeapons.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatches.cs" />
+    <Compile Include="RenameWeaponsUtility.cs" />
     <Compile Include="TexButton.cs" />
     <Compile Include="StaticConstructorClass.cs" />
     <Compile Include="Dialog_RenameThings.cs" />

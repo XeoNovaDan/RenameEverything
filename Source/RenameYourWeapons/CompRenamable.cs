@@ -28,30 +28,17 @@ namespace RenameYourWeapons
         public override string TransformLabel(string label)
         {
             cachedLabel = label;
-            return Named ? name : label;
+            if (Named)
+            {
+                bool shouldAppendCachedLabel = RenameYourWeaponsSettings.appendCachedLabel && (!RenameYourWeaponsSettings.onlyAppendInThingHolder || ThingOwnerUtility.GetFirstSpawnedParentThing(parent) != parent);
+                return name + (shouldAppendCachedLabel ? $" ({cachedLabel.CapitalizeFirst()})" : String.Empty);
+            }
+            return label;
         }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
-            yield return new Command_RenameWeapon()
-            {
-                renamable = this,
-                defaultLabel = "Rename".Translate(),
-                defaultDesc = "RenameYourWeapon.RenameWeapon_Description".Translate(),
-                icon = TexButton.RenameTex,
-                hotKey = KeyBindingDefOf.Misc1
-            };
-
-            if (Named)
-            {
-                yield return new Command_Action()
-                {
-                    defaultLabel = "RenameYourWeapon.RemoveName".Translate(),
-                    defaultDesc = "RenameYourWeapon.RemoveName_Description".Translate(),
-                    icon = TexButton.DeleteX,
-                    action = () => Named = false
-                };
-            }
+            return RenameWeaponsUtility.RenameWeaponGizmos(this);
         }
 
         public override void PostExposeData()

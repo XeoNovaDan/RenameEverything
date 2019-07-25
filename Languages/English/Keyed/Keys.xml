@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
+    <!-- Settings -->
+    <RenameYourWeapons.SettingsCategory>Rename Your Weapons</RenameYourWeapons.SettingsCategory>
+
+    <RenameYourWeapon.AppendCachedLabel>Append original label to weapon's name</RenameYourWeapon.AppendCachedLabel>
+    <RenameYourWeapon.AppendCachedLabel_Tooltip>When you rename a weapon, its original label will be added afterwards in brackets. For example, if you named some frag grenades 'The Holy Hand Grenade of Antioch', the weapon's label will be 'The Holy Hand Grenade of Antioch (Frag grenades)'.</RenameYourWeapon.AppendCachedLabel_Tooltip>
+
+    <RenameYourWeapon.AppendCachedLabelInThingHolder>Only append when equipped</RenameYourWeapon.AppendCachedLabelInThingHolder>
+    <RenameYourWeapon.AppendCachedLabelInThingHolder_Tooltip>The weapon's original label will only be added after its given name when the weapon is equipped. Also applies when in a pawn's inventory or put inside any container such as a transport pod.</RenameYourWeapon.AppendCachedLabelInThingHolder_Tooltip>
+
+    <!-- Gizmos -->
+    <RenameYourWeapon.RenameWeapon>Rename weapon</RenameYourWeapon.RenameWeapon>
     <RenameYourWeapon.RenameWeapon_Description>Change the name of this weapon to one of your liking.</RenameYourWeapon.RenameWeapon_Description>
 
     <RenameYourWeapon.RemoveName>Remove name</RenameYourWeapon.RemoveName>
