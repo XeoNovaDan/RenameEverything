@@ -12,8 +12,12 @@ namespace RenameYourWeapons
     public class RenameYourWeaponsSettings : ModSettings
     {
 
-        public static bool appendCachedLabel = true;
+        public static bool appendCachedLabel = false;
         public static bool onlyAppendInThingHolder = true;
+        public static bool pawnWeaponRenameGizmos = true;
+
+        public static bool offHandRenameGizmos = true;
+        public static bool dualWieldInspectString = true;
 
         public void DoWindowContents(Rect wrect)
         {
@@ -26,7 +30,7 @@ namespace RenameYourWeapons
 
             // Append original label to weapon's name
             options.Gap();
-            options.CheckboxLabeled("RenameYourWeapon.AppendCachedLabel".Translate(), ref appendCachedLabel, "RenameYourWeapon.AppendCachedLabel_ToolTip".Translate());
+            options.CheckboxLabeled("RenameYourWeapon.AppendCachedLabel".Translate(), ref appendCachedLabel, "RenameYourWeapon.AppendCachedLabel_Tooltip".Translate());
 
             // Append original label to weapon's name (grey out if appendCachedLabel is false)
             if (!appendCachedLabel)
@@ -35,6 +39,39 @@ namespace RenameYourWeapons
             options.CheckboxLabeled("RenameYourWeapon.AppendCachedLabelInThingHolder".Translate(), ref onlyAppendInThingHolder, "RenameYourWeapon.AppendCachedLabelInThingHolder_Tooltip".Translate());
             GUI.color = defaultColor;
 
+            // Show weapon renaming buttons on pawns
+            options.Gap();
+            options.CheckboxLabeled("RenameYourWeapon.ShowRenameGizmosOnPawns".Translate(), ref pawnWeaponRenameGizmos, "RenameYourWeapon.ShowRenameGizmosOnPawns_Tooltip".Translate());
+
+            #region Dual Wield
+            // Dual Wield integration
+            Text.Font = GameFont.Medium;
+            options.Gap(24);
+            options.Label("RenameYourWeapon.DualWieldIntegration".Translate());
+            Text.Font = GameFont.Small;
+
+            // Dual Wield not active
+            if (!ModCompatibilityCheck.DualWield)
+            {
+                GUI.color = Color.grey;
+                options.Label("RenameYourWeapon.DualWieldNotActive".Translate());
+                GUI.color = defaultColor;
+            }
+
+            else
+            {
+                // Show off-hand weapon renaming buttons on pawns
+                if (!pawnWeaponRenameGizmos)
+                    GUI.color = Color.grey;
+                options.Gap();
+                options.CheckboxLabeled("RenameYourWeapon.ShowOffHandRenameGizmosOnPawns".Translate(), ref offHandRenameGizmos, "RenameYourWeapon.ShowOffHandRenameGizmosOnPawns_Tooltip".Translate());
+                GUI.color = defaultColor;
+
+                // Show both weapon names when dual wielding
+                options.Gap();
+                options.CheckboxLabeled("RenameYourWeapon.ShowBothWeaponNamesDualWield".Translate(), ref dualWieldInspectString, "RenameYourWeapon.ShowBothWeaponNamesDualWield_Tooltip".Translate());
+            }
+            #endregion
             // Finish
             options.End();
             Mod.GetSettings<RenameYourWeaponsSettings>().Write();
@@ -43,8 +80,12 @@ namespace RenameYourWeapons
 
         public override void ExposeData()
         {
-            Scribe_Values.Look(ref appendCachedLabel, "appendCachedLabel", true);
+            Scribe_Values.Look(ref appendCachedLabel, "appendCachedLabel", false);
             Scribe_Values.Look(ref onlyAppendInThingHolder, "onlyAppendInThingHolder", true);
+            Scribe_Values.Look(ref pawnWeaponRenameGizmos, "pawnWeaponRenameGizmos", true);
+
+            Scribe_Values.Look(ref offHandRenameGizmos, "offHandRenameGizmos", true);
+            Scribe_Values.Look(ref dualWieldInspectString, "dualWieldInspectString", true);
         }
 
     }

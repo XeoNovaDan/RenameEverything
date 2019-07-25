@@ -12,6 +12,9 @@ namespace RenameYourWeapons
     public class Command_RenameWeapon : Command
     {
 
+        public CompRenamable renamable;
+        private List<CompRenamable> renamables;
+
         public override void ProcessInput(Event ev)
         {
             base.ProcessInput(ev);
@@ -28,10 +31,6 @@ namespace RenameYourWeapons
             renamables.Add(((Command_RenameWeapon)other).renamable);
             return false;
         }
-
-        public CompRenamable renamable;
-
-        private List<CompRenamable> renamables;
 
     }
 

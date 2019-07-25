@@ -17,7 +17,7 @@ namespace RenameYourWeapons
 
         public bool Named
         {
-            get => !name.NullOrEmpty();
+            get => !name.NullOrEmpty() && name.ToLower() != cachedLabel.ToLower();
             set
             {
                 if (!value)
