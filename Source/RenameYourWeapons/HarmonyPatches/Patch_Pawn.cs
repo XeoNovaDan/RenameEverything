@@ -24,11 +24,25 @@ namespace RenameYourWeapons
             {
                 // Add weapon rename gizmos to pawn if they have a weapon equipped and that weapon has CompRenamable (which should be true 99.9% of the time)
                 var equipmentTracker = __instance.equipment;
-                if (equipmentTracker != null && equipmentTracker.Primary != null)
+                if (equipmentTracker != null)
                 {
-                    var renamableComp = equipmentTracker.Primary.GetComp<CompRenamable>();
-                    if (renamableComp != null)
-                        __result = __result.Concat(RenameWeaponsUtility.RenameWeaponGizmos(renamableComp));
+                    if (equipmentTracker.Primary != null)
+                    {
+                        var renamableComp = equipmentTracker.Primary.GetComp<CompRenamable>();
+                        if (renamableComp != null)
+                            __result = __result.Concat(RenameWeaponsUtility.RenameWeaponGizmos(renamableComp));
+                    }
+                    if (ModCompatibilityCheck.DualWield)
+                    {
+                        object[] parameters = new object[] { equipmentTracker, null };
+                        if ((bool)ReflectedMethods.TryGetOffHandEquipmentInfo.Invoke(null, parameters))
+                        {
+                            var secondary = (ThingWithComps)parameters[1];
+                            var secondaryRenamableComp = secondary.GetComp<CompRenamable>();
+                            if (secondaryRenamableComp != null)
+                                __result = __result.Concat(RenameWeaponsUtility.RenameWeaponGizmos(secondaryRenamableComp, true));
+                        }
+                    }
                 }
             }
 

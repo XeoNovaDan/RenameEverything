@@ -12,9 +12,11 @@
 
     <!-- Gizmos -->
     <RenameYourWeapon.RenameWeapon>Rename weapon</RenameYourWeapon.RenameWeapon>
+    <RenameYourWeapon.RenameOffHandWeapon>Rename off-hand</RenameYourWeapon.RenameOffHandWeapon>
     <RenameYourWeapon.RenameWeapon_Description>Change the name of this weapon to one of your liking.</RenameYourWeapon.RenameWeapon_Description>
 
     <RenameYourWeapon.RemoveName>Remove name</RenameYourWeapon.RemoveName>
+    <RenameYourWeapon.RemoveOffHandName>Remove off-hand name</RenameYourWeapon.RemoveOffHandName>
     <RenameYourWeapon.RemoveName_Description>Remove the name that you've given to this weapon.</RenameYourWeapon.RemoveName_Description>
 
 </LanguageData>

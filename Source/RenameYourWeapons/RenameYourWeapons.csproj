@@ -53,6 +53,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Command_RenameWeapon.cs" />
+    <Compile Include="Reflection\ReflectedMethods.cs" />
+    <Compile Include="ModCompatibilityCheck.cs" />
     <Compile Include="RenameYourWeaponsSettings.cs" />
     <Compile Include="RenameYourWeapons.cs" />
     <Compile Include="HarmonyPatches\Patch_Pawn.cs" />
