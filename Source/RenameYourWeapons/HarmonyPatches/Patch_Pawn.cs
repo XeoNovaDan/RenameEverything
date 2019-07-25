@@ -32,16 +32,13 @@ namespace RenameYourWeapons
                         if (renamableComp != null)
                             __result = __result.Concat(RenameWeaponsUtility.RenameWeaponGizmos(renamableComp));
                     }
-                    if (ModCompatibilityCheck.DualWield)
+
+                    // Integration with Dual Wield
+                    if (ModCompatibilityCheck.DualWield && ReflectedMethods.TryGetOffHandEquipment(equipmentTracker, out ThingWithComps secondary))
                     {
-                        object[] parameters = new object[] { equipmentTracker, null };
-                        if ((bool)ReflectedMethods.TryGetOffHandEquipmentInfo.Invoke(null, parameters))
-                        {
-                            var secondary = (ThingWithComps)parameters[1];
-                            var secondaryRenamableComp = secondary.GetComp<CompRenamable>();
-                            if (secondaryRenamableComp != null)
-                                __result = __result.Concat(RenameWeaponsUtility.RenameWeaponGizmos(secondaryRenamableComp, true));
-                        }
+                        var secondaryRenamableComp = secondary.GetComp<CompRenamable>();
+                        if (secondaryRenamableComp != null)
+                        __result = __result.Concat(RenameWeaponsUtility.RenameWeaponGizmos(secondaryRenamableComp, true));
                     }
                 }
             }

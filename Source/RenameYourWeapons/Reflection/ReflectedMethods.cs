@@ -21,11 +21,14 @@ namespace RenameYourWeapons
             if (ModCompatibilityCheck.DualWield)
             {
                 var extPawnEquipmentTrackerType = GenTypes.GetTypeInAnyAssemblyNew("DualWield.Ext_Pawn_EquipmentTracker", null);
-                TryGetOffHandEquipmentInfo = extPawnEquipmentTrackerType.GetMethod("TryGetOffHandEquipment", BindingFlags.Public | BindingFlags.Static);
+                var tryGetOffHandEquipmentInfo = extPawnEquipmentTrackerType.GetMethod("TryGetOffHandEquipment", BindingFlags.Public | BindingFlags.Static);
+                TryGetOffHandEquipment = (FuncOut<Pawn_EquipmentTracker, ThingWithComps, bool>)Delegate.CreateDelegate(typeof(FuncOut<Pawn_EquipmentTracker, ThingWithComps, bool>), tryGetOffHandEquipmentInfo);
             }
         }
 
-        public static MethodInfo TryGetOffHandEquipmentInfo;
+        public static FuncOut<Pawn_EquipmentTracker, ThingWithComps, bool> TryGetOffHandEquipment;
+
+        public delegate V FuncOut<T, U, V>(T input, out U output);
 
     }
 
