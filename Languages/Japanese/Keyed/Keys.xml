@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Settings -->
+  <RenameYourWeapons.SettingsCategory>Rename Your Weapons</RenameYourWeapons.SettingsCategory>
+
+  <RenameYourWeapon.AppendCachedLabel>〇 武器の名前にオリジナルの名称を付ける</RenameYourWeapon.AppendCachedLabel>
+  <RenameYourWeapon.AppendCachedLabel_Tooltip>武器の名前を変更すると、改名された名前の後に元の名称がかっこ内に追加されます。たとえば、あなたが手榴弾を\n「アンティオキアの聖なる手榴弾」\nと改名した場合、武器の表示名は\n「アンティオキアの聖なる手榴弾（手榴弾）」\nとなります。</RenameYourWeapon.AppendCachedLabel_Tooltip>
+
+  <RenameYourWeapon.AppendCachedLabelInThingHolder>〇 装備時のみ追加</RenameYourWeapon.AppendCachedLabelInThingHolder>
+  <RenameYourWeapon.AppendCachedLabelInThingHolder_Tooltip>武器の変更前の元の名称は、武器を装備している際は、変更された名前の後にだけ追加されます。ポーンのインベントリに持ち物として入っている場合や、または輸送ポッドなどのコンテナの中に置かれいている場合にも適用されます。</RenameYourWeapon.AppendCachedLabelInThingHolder_Tooltip>
+
+  <RenameYourWeapon.ShowRenameGizmosOnPawns>〇 ポーンに武器名変更ボタンを表示</RenameYourWeapon.ShowRenameGizmosOnPawns>
+  <RenameYourWeapon.ShowRenameGizmosOnPawns_Tooltip>ポーンを選択すると、装備している武器の名前を変更ボタンが表示されます。</RenameYourWeapon.ShowRenameGizmosOnPawns_Tooltip>
+
+
+  <RenameYourWeapon.DualWieldIntegration>Dual Wield Modと統合</RenameYourWeapon.DualWieldIntegration>
+  <RenameYourWeapon.DualWieldNotActive>Dual Wield Modは現在無効です。</RenameYourWeapon.DualWieldNotActive>
+
+  <RenameYourWeapon.ShowOffHandRenameGizmosOnPawns>〇 ポーンに逆手武器の名前を変更するボタンを表示する</RenameYourWeapon.ShowOffHandRenameGizmosOnPawns>
+  <RenameYourWeapon.ShowOffHandRenameGizmosOnPawns_Tooltip>ポーンの選択中に、逆手に持っている武器の名前を変更するためのボタンは、利手に持っている武器が表示されているボタンの横にあります。無効にすると、名前の変更が利手武器と逆手武器の両方に適用されます。\n\n[ポーンに武器名変更ボタンを表示]が無効になっていると表示されません。</RenameYourWeapon.ShowOffHandRenameGizmosOnPawns_Tooltip>
+
+  <RenameYourWeapon.ShowBothWeaponNamesDualWield>〇 二刀流の場合は両方の武器名を表示する</RenameYourWeapon.ShowBothWeaponNamesDualWield>
+  <RenameYourWeapon.ShowBothWeaponNamesDualWield_Tooltip>現在二刀流な装備をしているポーンを選択すると、装備している両方の武器の名前が画面の左下隅にある「装備」の横に表示されます。</RenameYourWeapon.ShowBothWeaponNamesDualWield_Tooltip>
+
+  <!-- Gizmos -->
+  <RenameYourWeapon.RenameWeapon>名前を変更</RenameYourWeapon.RenameWeapon>
+  <RenameYourWeapon.RenameOffHandWeapon>逆手武器の 名前を変更</RenameYourWeapon.RenameOffHandWeapon>
+  <RenameYourWeapon.RenameWeapon_Description>この武器の名前を好きな名前に変更します。</RenameYourWeapon.RenameWeapon_Description>
+
+  <RenameYourWeapon.RemoveName>名前を削除</RenameYourWeapon.RemoveName>
+  <RenameYourWeapon.RemoveOffHandName>逆手武器の 名前を削除</RenameYourWeapon.RemoveOffHandName>
+  <RenameYourWeapon.RemoveName_Description>この武器に付けた名前を削除します。</RenameYourWeapon.RemoveName_Description>
+
+</LanguageData>
