@@ -40,7 +40,12 @@ namespace RenameYourWeapons
                         {
                             var secondaryRenamableComp = secondary.GetComp<CompRenamable>();
                             if (secondaryRenamableComp != null)
-                                __result = __result.Concat(RenameWeaponsUtility.RenameWeaponGizmos(secondaryRenamableComp, RenameYourWeaponsSettings.offHandRenameGizmos));
+                            {
+                                if (RenameYourWeaponsSettings.offHandRenameGizmos)
+                                    __result = __result.Concat(RenameWeaponsUtility.RenameWeaponGizmos(secondaryRenamableComp, "RenameYourWeapon.RenameOffHandWeapon", "RenameYourWeapon.RemoveOffHandName"));
+                                else
+                                    __result = __result.Concat(RenameWeaponsUtility.RenameWeaponGizmos(secondaryRenamableComp));
+                            }
                         }
                     }
                 }

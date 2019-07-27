@@ -25,6 +25,7 @@
 
     <!-- Gizmos -->
     <RenameYourWeapon.RenameWeapon>Rename weapon</RenameYourWeapon.RenameWeapon>
+    <RenameYourWeapon.RenameTurret>Rename turret</RenameYourWeapon.RenameTurret>
     <RenameYourWeapon.RenameOffHandWeapon>Rename off-hand</RenameYourWeapon.RenameOffHandWeapon>
     <RenameYourWeapon.RenameWeapon_Description>Change the name of this weapon to one of your liking.</RenameYourWeapon.RenameWeapon_Description>
 

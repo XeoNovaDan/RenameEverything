@@ -15,6 +15,8 @@ namespace RenameYourWeapons
         private string cachedLabel;
         public string name;
 
+        public CompProperties_Renamable Props => (CompProperties_Renamable)props;
+
         public bool Named
         {
             get => !name.NullOrEmpty() && name.ToLower() != cachedLabel.ToLower();
@@ -50,7 +52,7 @@ namespace RenameYourWeapons
 
         public override string CompInspectStringExtra()
         {
-            return Named ? $"{"ShootReportWeapon".Translate()}: {cachedLabel.CapitalizeFirst()}" : null;
+            return Named ? $"{Props.inspectStringTranlationKey.Translate().CapitalizeFirst()}: {cachedLabel.CapitalizeFirst()}" : null;
         }
 
     }

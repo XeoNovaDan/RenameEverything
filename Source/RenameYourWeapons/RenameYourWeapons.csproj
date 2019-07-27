@@ -65,7 +65,8 @@
     <Compile Include="TexButton.cs" />
     <Compile Include="StaticConstructorClass.cs" />
     <Compile Include="Dialog_RenameThings.cs" />
-    <Compile Include="CompRenamable.cs" />
+    <Compile Include="ThingComps\CompProperties_Renamable.cs" />
+    <Compile Include="ThingComps\CompRenamable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

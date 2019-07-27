@@ -14,7 +14,8 @@ namespace RenameYourWeapons
 
         public override bool Matches(Thing t)
         {
-            return !t.TryGetComp<CompRenamable>().Named;
+            var renamableComp = t.TryGetComp<CompRenamable>();
+            return renamableComp == null || !renamableComp.Named;
         }
 
         public override bool AlwaysMatches(ThingDef def)
