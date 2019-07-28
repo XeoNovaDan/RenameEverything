@@ -1,8 +1,0 @@
-E:\Documents\My RimWorld Mods\Just For Fun\RenameYourWeapons\1.0\Assemblies\RenameYourWeapons.dll
-E:\Documents\My RimWorld Mods\Just For Fun\RenameYourWeapons\Source\RenameYourWeapons\obj\Debug\RenameYourWeapons.csprojAssemblyReference.cache
-E:\Documents\My RimWorld Mods\Just For Fun\RenameYourWeapons\Source\RenameYourWeapons\obj\Debug\RenameYourWeapons.csproj.CoreCompileInputs.cache
-E:\Documents\My RimWorld Mods\Just For Fun\RenameYourWeapons\Source\RenameYourWeapons\obj\Debug\RenameYourWeapons.dll
-E:\Documents\GitHub\RenameYourWeapons\1.0\Assemblies\RenameYourWeapons.dll
-E:\Documents\GitHub\RenameYourWeapons\Source\RenameYourWeapons\obj\Debug\RenameYourWeapons.csprojAssemblyReference.cache
-E:\Documents\GitHub\RenameYourWeapons\Source\RenameYourWeapons\obj\Debug\RenameYourWeapons.csproj.CoreCompileInputs.cache
-E:\Documents\GitHub\RenameYourWeapons\Source\RenameYourWeapons\obj\Debug\RenameYourWeapons.dll

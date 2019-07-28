@@ -2,34 +2,34 @@
 <LanguageData>
 
   <!-- Settings -->
-  <RenameYourWeapons.SettingsCategory>命名你的武器</RenameYourWeapons.SettingsCategory>
+  <RenameEverything.SettingsCategory>命名你的武器</RenameEverything.SettingsCategory>
 
-  <RenameYourWeapon.AppendCachedLabel>将原始标签附加到武器名称上</RenameYourWeapon.AppendCachedLabel>
-  <RenameYourWeapon.AppendCachedLabel_Tooltip>当你命名一件武器，它的原始标签将被添加在括号中。例如，如果你将一个碎片手榴弹命名为“安提克的神圣手榴弹” ，武器的名字将是“安提阿的神圣手榴弹(碎片手榴弹)”。</RenameYourWeapon.AppendCachedLabel_Tooltip>
+  <RenameEverything.AppendCachedLabel>将原始标签附加到武器名称上</RenameEverything.AppendCachedLabel>
+  <RenameEverything.AppendCachedLabel_Tooltip>当你命名一件武器，它的原始标签将被添加在括号中。例如，如果你将一个碎片手榴弹命名为“安提克的神圣手榴弹” ，武器的名字将是“安提阿的神圣手榴弹(碎片手榴弹)”。</RenameEverything.AppendCachedLabel_Tooltip>
 
-  <RenameYourWeapon.AppendCachedLabelInThingHolder>只在装备时追加。</RenameYourWeapon.AppendCachedLabelInThingHolder>
-  <RenameYourWeapon.AppendCachedLabelInThingHolder_Tooltip>武器的原始标签只会当武器装备上的时候追加。同样适用于在角色携带或放在任何集装箱里的时候，如运输舱。</RenameYourWeapon.AppendCachedLabelInThingHolder_Tooltip>
+  <RenameEverything.AppendCachedLabelInThingHolder>只在装备时追加。</RenameEverything.AppendCachedLabelInThingHolder>
+  <RenameEverything.AppendCachedLabelInThingHolder_Tooltip>武器的原始标签只会当武器装备上的时候追加。同样适用于在角色携带或放在任何集装箱里的时候，如运输舱。</RenameEverything.AppendCachedLabelInThingHolder_Tooltip>
 
-  <RenameYourWeapon.ShowRenameGizmosOnPawns>角色显示武器命名按钮</RenameYourWeapon.ShowRenameGizmosOnPawns>
-  <RenameYourWeapon.ShowRenameGizmosOnPawns_Tooltip>当角色被选中时，所装备武器的命名按钮将显示出来。</RenameYourWeapon.ShowRenameGizmosOnPawns_Tooltip>
+  <RenameEverything.ShowRenameGizmosOnPawns>角色显示武器命名按钮</RenameEverything.ShowRenameGizmosOnPawns>
+  <RenameEverything.ShowRenameGizmosOnPawns_Tooltip>当角色被选中时，所装备武器的命名按钮将显示出来。</RenameEverything.ShowRenameGizmosOnPawns_Tooltip>
 
 
-  <RenameYourWeapon.DualWieldIntegration>Dual Wield（双枪客） Mod集合</RenameYourWeapon.DualWieldIntegration>
-  <RenameYourWeapon.DualWieldNotActive>双枪客mod现在没有激活。</RenameYourWeapon.DualWieldNotActive>
+  <RenameEverything.DualWieldIntegration>Dual Wield（双枪客） Mod集合</RenameEverything.DualWieldIntegration>
+  <RenameEverything.DualWieldNotActive>双枪客mod现在没有激活。</RenameEverything.DualWieldNotActive>
 
-  <RenameYourWeapon.ShowOffHandRenameGizmosOnPawns>角色显示副手武器重命名按钮</RenameYourWeapon.ShowOffHandRenameGizmosOnPawns>
-  <RenameYourWeapon.ShowOffHandRenameGizmosOnPawns_Tooltip>当角色被选中时，副手武器的命名按钮将显示在主要武器的按钮旁边。如果禁用，命名将适用于主手武器和副手武器。\n\n禁用[角色显示武器命名按钮]时无效。</RenameYourWeapon.ShowOffHandRenameGizmosOnPawns_Tooltip>
+  <RenameEverything.ShowOffHandRenameGizmosOnPawns>角色显示副手武器重命名按钮</RenameEverything.ShowOffHandRenameGizmosOnPawns>
+  <RenameEverything.ShowOffHandRenameGizmosOnPawns_Tooltip>当角色被选中时，副手武器的命名按钮将显示在主要武器的按钮旁边。如果禁用，命名将适用于主手武器和副手武器。\n\n禁用[角色显示武器命名按钮]时无效。</RenameEverything.ShowOffHandRenameGizmosOnPawns_Tooltip>
 
-  <RenameYourWeapon.ShowBothWeaponNamesDualWield>双持时显示两种武器的名称</RenameYourWeapon.ShowBothWeaponNamesDualWield>
-  <RenameYourWeapon.ShowBothWeaponNamesDualWield_Tooltip>当选择一个双持角色时，装备的两个武器的名字都会显示在屏幕左下角的“装备: ”旁边。</RenameYourWeapon.ShowBothWeaponNamesDualWield_Tooltip>
+  <RenameEverything.ShowBothWeaponNamesDualWield>双持时显示两种武器的名称</RenameEverything.ShowBothWeaponNamesDualWield>
+  <RenameEverything.ShowBothWeaponNamesDualWield_Tooltip>当选择一个双持角色时，装备的两个武器的名字都会显示在屏幕左下角的“装备: ”旁边。</RenameEverything.ShowBothWeaponNamesDualWield_Tooltip>
 
   <!-- Gizmos -->
-  <RenameYourWeapon.RenameWeapon>命名武器</RenameYourWeapon.RenameWeapon>
-  <RenameYourWeapon.RenameOffHandWeapon>命名副手武器</RenameYourWeapon.RenameOffHandWeapon>
-  <RenameYourWeapon.RenameWeapon_Description>把这个武器的名字改成你喜欢的名字。</RenameYourWeapon.RenameWeapon_Description>
+  <RenameEverything.RenameWeapon>命名武器</RenameEverything.RenameWeapon>
+  <RenameEverything.RenameOffHandWeapon>命名副手武器</RenameEverything.RenameOffHandWeapon>
+  <RenameEverything.RenameWeapon_Description>把这个武器的名字改成你喜欢的名字。</RenameEverything.RenameWeapon_Description>
 
-  <RenameYourWeapon.RemoveName>删除命名</RenameYourWeapon.RemoveName>
-  <RenameYourWeapon.RemoveOffHandName>副手武器删除命名</RenameYourWeapon.RemoveOffHandName>
-  <RenameYourWeapon.RemoveName_Description>删除你给这个武器起的名字。</RenameYourWeapon.RemoveName_Description>
+  <RenameEverything.RemoveName>删除命名</RenameEverything.RemoveName>
+  <RenameEverything.RemoveOffHandName>副手武器删除命名</RenameEverything.RemoveOffHandName>
+  <RenameEverything.RemoveName_Description>删除你给这个武器起的名字。</RenameEverything.RemoveName_Description>
 
 </LanguageData>

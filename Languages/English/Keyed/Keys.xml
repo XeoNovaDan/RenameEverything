@@ -2,35 +2,35 @@
 <LanguageData>
 
     <!-- Settings -->
-    <RenameYourWeapons.SettingsCategory>Rename Your Weapons</RenameYourWeapons.SettingsCategory>
+    <RenameEverything.SettingsCategory>Rename Your Weapons</RenameEverything.SettingsCategory>
 
-    <RenameYourWeapon.AppendCachedLabel>Append original label to weapon's name</RenameYourWeapon.AppendCachedLabel>
-    <RenameYourWeapon.AppendCachedLabel_Tooltip>When you rename a weapon, its original label will be added afterwards in brackets. For example, if you named some frag grenades 'The Holy Hand Grenade of Antioch', the weapon's label will be 'The Holy Hand Grenade of Antioch (Frag grenades)'.</RenameYourWeapon.AppendCachedLabel_Tooltip>
+    <RenameEverything.AppendCachedLabel>Append original label to weapon's name</RenameEverything.AppendCachedLabel>
+    <RenameEverything.AppendCachedLabel_Tooltip>When you rename a weapon, its original label will be added afterwards in brackets. For example, if you named some frag grenades 'The Holy Hand Grenade of Antioch', the weapon's label will be 'The Holy Hand Grenade of Antioch (Frag grenades)'.</RenameEverything.AppendCachedLabel_Tooltip>
 
-    <RenameYourWeapon.AppendCachedLabelInThingHolder>Only append when equipped</RenameYourWeapon.AppendCachedLabelInThingHolder>
-    <RenameYourWeapon.AppendCachedLabelInThingHolder_Tooltip>The weapon's original label will only be added after its given name when the weapon is equipped. Also applies when in a pawn's inventory or put inside any container such as a transport pod.</RenameYourWeapon.AppendCachedLabelInThingHolder_Tooltip>
+    <RenameEverything.AppendCachedLabelInThingHolder>Only append when equipped</RenameEverything.AppendCachedLabelInThingHolder>
+    <RenameEverything.AppendCachedLabelInThingHolder_Tooltip>The weapon's original label will only be added after its given name when the weapon is equipped. Also applies when in a pawn's inventory or put inside any container such as a transport pod.</RenameEverything.AppendCachedLabelInThingHolder_Tooltip>
 
-    <RenameYourWeapon.ShowRenameGizmosOnPawns>Show weapon renaming buttons on pawns</RenameYourWeapon.ShowRenameGizmosOnPawns>
-    <RenameYourWeapon.ShowRenameGizmosOnPawns_Tooltip>When pawns are selected, renaming buttons for their equipped weapons will show.</RenameYourWeapon.ShowRenameGizmosOnPawns_Tooltip>
+    <RenameEverything.ShowRenameGizmosOnPawns>Show weapon renaming buttons on pawns</RenameEverything.ShowRenameGizmosOnPawns>
+    <RenameEverything.ShowRenameGizmosOnPawns_Tooltip>When pawns are selected, renaming buttons for their equipped weapons will show.</RenameEverything.ShowRenameGizmosOnPawns_Tooltip>
 
 
-    <RenameYourWeapon.DualWieldIntegration>Dual Wield Integration</RenameYourWeapon.DualWieldIntegration>
-    <RenameYourWeapon.DualWieldNotActive>Dual Wield is currently not active.</RenameYourWeapon.DualWieldNotActive>
+    <RenameEverything.DualWieldIntegration>Dual Wield Integration</RenameEverything.DualWieldIntegration>
+    <RenameEverything.DualWieldNotActive>Dual Wield is currently not active.</RenameEverything.DualWieldNotActive>
 
-    <RenameYourWeapon.ShowOffHandRenameGizmosOnPawns>Show off-hand weapon renaming buttons on pawns</RenameYourWeapon.ShowOffHandRenameGizmosOnPawns>
-    <RenameYourWeapon.ShowOffHandRenameGizmosOnPawns_Tooltip>When pawns are selected, renaming buttons for their off-hand weapons will show alongside the buttons for their primary weapons. If disabled, name changes will apply to both weapons. Will not show if 'Show renaming buttons on pawns' is disabled.</RenameYourWeapon.ShowOffHandRenameGizmosOnPawns_Tooltip>
+    <RenameEverything.ShowOffHandRenameGizmosOnPawns>Show off-hand weapon renaming buttons on pawns</RenameEverything.ShowOffHandRenameGizmosOnPawns>
+    <RenameEverything.ShowOffHandRenameGizmosOnPawns_Tooltip>When pawns are selected, renaming buttons for their off-hand weapons will show alongside the buttons for their primary weapons. If disabled, name changes will apply to both weapons. Will not show if 'Show renaming buttons on pawns' is disabled.</RenameEverything.ShowOffHandRenameGizmosOnPawns_Tooltip>
 
-    <RenameYourWeapon.ShowBothWeaponNamesDualWield>Show both weapon names when dual wielding</RenameYourWeapon.ShowBothWeaponNamesDualWield>
-    <RenameYourWeapon.ShowBothWeaponNamesDualWield_Tooltip>When selecting a pawn who is currently dual wielding, both of their equipped weapons' names will show next to 'Equipped:' in the bottom-left corner of the screen.</RenameYourWeapon.ShowBothWeaponNamesDualWield_Tooltip>
+    <RenameEverything.ShowBothWeaponNamesDualWield>Show both weapon names when dual wielding</RenameEverything.ShowBothWeaponNamesDualWield>
+    <RenameEverything.ShowBothWeaponNamesDualWield_Tooltip>When selecting a pawn who is currently dual wielding, both of their equipped weapons' names will show next to 'Equipped:' in the bottom-left corner of the screen.</RenameEverything.ShowBothWeaponNamesDualWield_Tooltip>
 
     <!-- Gizmos -->
-    <RenameYourWeapon.RenameWeapon>Rename weapon</RenameYourWeapon.RenameWeapon>
-    <RenameYourWeapon.RenameTurret>Rename turret</RenameYourWeapon.RenameTurret>
-    <RenameYourWeapon.RenameOffHandWeapon>Rename off-hand</RenameYourWeapon.RenameOffHandWeapon>
-    <RenameYourWeapon.RenameWeapon_Description>Change the name of this weapon to one of your liking.</RenameYourWeapon.RenameWeapon_Description>
+    <RenameEverything.RenameWeapon>Rename weapon</RenameEverything.RenameWeapon>
+    <RenameEverything.RenameTurret>Rename turret</RenameEverything.RenameTurret>
+    <RenameEverything.RenameOffHandWeapon>Rename off-hand</RenameEverything.RenameOffHandWeapon>
+    <RenameEverything.RenameWeapon_Description>Change the name of this weapon to one of your liking.</RenameEverything.RenameWeapon_Description>
 
-    <RenameYourWeapon.RemoveName>Remove name</RenameYourWeapon.RemoveName>
-    <RenameYourWeapon.RemoveOffHandName>Remove off-hand name</RenameYourWeapon.RemoveOffHandName>
-    <RenameYourWeapon.RemoveName_Description>Remove the name that you've given to this weapon.</RenameYourWeapon.RemoveName_Description>
+    <RenameEverything.RemoveName>Remove name</RenameEverything.RemoveName>
+    <RenameEverything.RemoveOffHandName>Remove off-hand name</RenameEverything.RemoveOffHandName>
+    <RenameEverything.RemoveName_Description>Remove the name that you've given to this weapon.</RenameEverything.RemoveName_Description>
 
 </LanguageData>
