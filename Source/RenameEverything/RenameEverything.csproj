@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Command_Rename.cs" />
+    <Compile Include="Comps\CompProperties_Renamable.cs" />
     <Compile Include="Reflection\ReflectedMethods.cs" />
     <Compile Include="ModCompatibilityCheck.cs" />
     <Compile Include="RenameEverythingSettings.cs" />
@@ -65,8 +66,7 @@
     <Compile Include="TexButton.cs" />
     <Compile Include="StaticConstructorClass.cs" />
     <Compile Include="Dialog_RenameThings.cs" />
-    <Compile Include="ThingComps\CompProperties_Renamable.cs" />
-    <Compile Include="ThingComps\CompRenamable.cs" />
+    <Compile Include="Comps\CompRenamable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

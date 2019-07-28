@@ -21,7 +21,7 @@ namespace RenameEverything
             HarmonyInstance = HarmonyInstance.Create("XeoNovaDan.RenameEverything");
         }
 
-        public override string SettingsCategory() => "RenameEverythingSettingsCategory".Translate();
+        public override string SettingsCategory() => "RenameEverything.SettingsCategory".Translate();
 
         public override void DoSettingsWindowContents(Rect inRect)
         {

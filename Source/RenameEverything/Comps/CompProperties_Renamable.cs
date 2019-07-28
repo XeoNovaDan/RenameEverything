@@ -18,7 +18,7 @@ namespace RenameEverything
         }
 
         public string renameTranslationKey;
-        public string inspectStringTranlationKey;
+        public string inspectStringTranslationKey;
 
     }
 

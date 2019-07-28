@@ -26,7 +26,7 @@
   <!-- Gizmos -->
   <RenameEverything.RenameWeapon>命名武器</RenameEverything.RenameWeapon>
   <RenameEverything.RenameOffHandWeapon>命名副手武器</RenameEverything.RenameOffHandWeapon>
-  <RenameEverything.RenameWeapon_Description>把这个武器的名字改成你喜欢的名字。</RenameEverything.RenameWeapon_Description>
+  <RenameEverything.RenameGizmo_Description>把这个武器的名字改成你喜欢的名字。</RenameEverything.RenameGizmo_Description>
 
   <RenameEverything.RemoveName>删除命名</RenameEverything.RemoveName>
   <RenameEverything.RemoveOffHandName>副手武器删除命名</RenameEverything.RemoveOffHandName>

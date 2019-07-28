@@ -17,8 +17,8 @@ namespace RenameEverything
             yield return new Command_Rename()
             {
                 renamable = renamableComp,
-                defaultLabel = (renameTranslationKey ?? renamableComp.Props.renameTranslationKey).Translate(),
-                defaultDesc = "RenameEverythingRenameWeapon_Description".Translate(),
+                defaultLabel = (renameTranslationKey ?? "RenameEverything.RenameObject").Translate(),
+                defaultDesc = "RenameEverything.RenameGizmo_Description".Translate(renamableComp.Props.inspectStringTranslationKey.Translate()),
                 icon = TexButton.RenameTex,
                 hotKey = KeyBindingDefOf.Misc1,
             };
@@ -27,13 +27,15 @@ namespace RenameEverything
             {
                 yield return new Command_Action()
                 {
-                    defaultLabel = (removeNameTranslationKey ?? "RenameEverythingRemoveName").Translate(),
-                    defaultDesc = "RenameEverythingRemoveName_Description".Translate(),
+                    defaultLabel = (removeNameTranslationKey ?? "RenameEverything.RemoveName").Translate(),
+                    defaultDesc = "RenameEverything.RemoveName_Description".Translate(),
                     icon = TexButton.DeleteX,
                     action = () => renamableComp.Named = false,
                 };
             }
         }
+
+        public static bool IsClassOrSubclassOf(this Type type, Type other) => type == other || type.IsSubclassOf(other);
 
     }
 

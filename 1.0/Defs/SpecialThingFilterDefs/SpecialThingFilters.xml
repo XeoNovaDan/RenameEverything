@@ -3,20 +3,20 @@
 
     <SpecialThingFilterDef>
         <defName>AllowNamedWeapons</defName>
-        <label>allow named weapons</label>
-        <parentCategory>Weapons</parentCategory>
+        <label>allow named</label>
+        <parentCategory>Root</parentCategory>
         <allowedByDefault>true</allowedByDefault>
         <saveKey>allowNamedWeapons</saveKey>
-        <workerClass>RenameYourWeapons.SpecialThingFilterWorker_AllowNamedWeapons</workerClass>
+        <workerClass>RenameEverything.SpecialThingFilterWorker_AllowNamed</workerClass>
     </SpecialThingFilterDef>
 
     <SpecialThingFilterDef>
         <defName>AllowUnnamedWeapons</defName>
-        <label>allow unnamed weapons</label>
-        <parentCategory>Weapons</parentCategory>
+        <label>allow unnamed</label>
+        <parentCategory>Root</parentCategory>
         <allowedByDefault>true</allowedByDefault>
         <saveKey>allowUnnamedWeapons</saveKey>
-        <workerClass>RenameYourWeapons.SpecialThingFilterWorker_AllowUnnamedWeapons</workerClass>
+        <workerClass>RenameEverything.SpecialThingFilterWorker_AllowUnnamed</workerClass>
     </SpecialThingFilterDef>
 
 </Defs>

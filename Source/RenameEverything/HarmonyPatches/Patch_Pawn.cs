@@ -42,7 +42,7 @@ namespace RenameEverything
                             if (secondaryRenamableComp != null)
                             {
                                 if (RenameEverythingSettings.offHandRenameGizmos)
-                                    __result = __result.Concat(RenameUtility.RenameGizmos(secondaryRenamableComp, "RenameEverythingRenameOffHandWeapon", "RenameEverythingRemoveOffHandName"));
+                                    __result = __result.Concat(RenameUtility.RenameGizmos(secondaryRenamableComp, "RenameEverything.RenameOffHandWeapon", "RenameEverything.RemoveOffHandName"));
                                 else
                                     __result = __result.Concat(RenameUtility.RenameGizmos(secondaryRenamableComp));
                             }

@@ -26,7 +26,7 @@
   <!-- Gizmos -->
   <RenameEverything.RenameWeapon>名前を変更</RenameEverything.RenameWeapon>
   <RenameEverything.RenameOffHandWeapon>逆手武器の 名前を変更</RenameEverything.RenameOffHandWeapon>
-  <RenameEverything.RenameWeapon_Description>この武器の名前を好きな名前に変更します。</RenameEverything.RenameWeapon_Description>
+  <RenameEverything.RenameGizmo_Description>この武器の名前を好きな名前に変更します。</RenameEverything.RenameGizmo_Description>
 
   <RenameEverything.RemoveName>名前を削除</RenameEverything.RemoveName>
   <RenameEverything.RemoveOffHandName>逆手武器の 名前を削除</RenameEverything.RemoveOffHandName>
