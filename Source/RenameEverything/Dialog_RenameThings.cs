@@ -39,7 +39,6 @@ namespace RenameEverything
             return true;
         }
 
-
         protected override void SetName(string name)
         {
             foreach (var renamableComp in renamableComps)

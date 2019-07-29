@@ -14,6 +14,7 @@ namespace RenameEverything
 
         private string cachedLabel;
         public string name;
+        public Color colour = Color.white;
 
         public CompProperties_Renamable Props => (CompProperties_Renamable)props;
 
@@ -50,6 +51,14 @@ namespace RenameEverything
                 hotKey = KeyBindingDefOf.Misc1,
             };
 
+            //yield return new Command_RecolourLabel()
+            //{
+            //    renamable = this,
+            //    defaultLabel = "Recolour",
+            //    defaultDesc = "Placeholder desc",
+            //    icon = TexButton.RenameTex
+            //};
+
             if (Named)
             {
                 yield return new Command_Action()
@@ -66,6 +75,7 @@ namespace RenameEverything
         {
             Scribe_Values.Look(ref cachedLabel, "cachedLabel");
             Scribe_Values.Look(ref name, "name");
+            Scribe_Deep.Look(ref colour, "colour", colour.r, colour.g, colour.b, colour.a);
             base.PostExposeData();
         }
 

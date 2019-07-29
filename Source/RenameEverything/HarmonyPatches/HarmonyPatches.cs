@@ -18,6 +18,7 @@ namespace RenameEverything
 
         static HarmonyPatches()
         {
+            //HarmonyInstance.DEBUG = true;
             RenameEverything.HarmonyInstance.PatchAll();
         }
 

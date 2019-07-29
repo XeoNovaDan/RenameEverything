@@ -53,10 +53,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Gizmos\Command_RemoveNameFloatMenu.cs" />
+    <Compile Include="Gizmos\Command_RecolourLabel.cs" />
+    <Compile Include="Gizmos\Command_Renamable.cs" />
     <Compile Include="Gizmos\Command_RenameFloatMenu.cs" />
-    <Compile Include="Gizmos\Command_Renamables.cs" />
+    <Compile Include="Gizmos\Command_RenamablesFromPawn.cs" />
     <Compile Include="Gizmos\Command_Rename.cs" />
     <Compile Include="Comps\CompProperties_Renamable.cs" />
+    <Compile Include="HarmonyPatches\Patch_InspectPaneUtility.cs" />
     <Compile Include="Reflection\ReflectedMethods.cs" />
     <Compile Include="ModCompatibilityCheck.cs" />
     <Compile Include="RenameEverythingSettings.cs" />

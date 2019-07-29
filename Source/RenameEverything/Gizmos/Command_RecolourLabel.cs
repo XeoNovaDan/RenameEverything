@@ -9,7 +9,7 @@ using RimWorld;
 namespace RenameEverything
 {
 
-    public class Command_Rename : Command_Renamable
+    public class Command_RecolourLabel : Command_Renamable
     {
 
         public override void ProcessInput(Event ev)

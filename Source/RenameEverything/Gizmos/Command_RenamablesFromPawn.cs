@@ -9,7 +9,7 @@ using RimWorld;
 namespace RenameEverything
 {
 
-    public abstract class Command_Renamables : Command
+    public abstract class Command_RenamablesFromPawn : Command
     {
 
         public Pair<Pawn, List<CompRenamable>> pawnRenamables;
@@ -39,7 +39,7 @@ namespace RenameEverything
 
         public override bool InheritInteractionsFrom(Gizmo other)
         {
-            var otherGizmo = (Command_Renamables)other;
+            var otherGizmo = (Command_RenamablesFromPawn)other;
 
             if (allPawnRenamables == null)
                 allPawnRenamables = new List<Pair<Pawn, List<CompRenamable>>>();

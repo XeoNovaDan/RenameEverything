@@ -9,7 +9,7 @@ using RimWorld;
 namespace RenameEverything
 {
 
-    public class Command_RemoveNameFloatMenu : Command_Renamables
+    public class Command_RemoveNameFloatMenu : Command_RenamablesFromPawn
     {
 
         protected override IEnumerable<FloatMenuOption> DoFloatMenuOptions()
