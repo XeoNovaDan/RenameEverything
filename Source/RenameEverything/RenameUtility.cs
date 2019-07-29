@@ -12,8 +12,6 @@ namespace RenameEverything
     public static class RenameUtility
     {
 
-        public static bool IsClassOrSubclassOf(this Type type, Type other) => type == other || type.IsSubclassOf(other);
-
         public static IEnumerable<CompRenamable> GetRenamableEquipmentComps(Pawn pawn)
         {
             // Equipment

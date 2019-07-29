@@ -15,20 +15,29 @@ namespace RenameEverything
 
         static StaticConstructorClass()
         {
-            foreach (var tDef in DefDatabase<ThingDef>.AllDefs.Where(t => t.thingClass != null && t.thingClass.IsClassOrSubclassOf(typeof(ThingWithComps))))
+            foreach (var tDef in DefDatabase<ThingDef>.AllDefs.Where(t => typeof(ThingWithComps).IsAssignableFrom(t.thingClass)))
             {
                 if (tDef.comps == null)
                     tDef.comps = new List<CompProperties>();
 
+                // Weapon
                 if (tDef.IsWeapon)
                     tDef.comps.Add(new CompProperties_Renamable() { renameTranslationKey = "RenameEverything.RenameWeapon", inspectStringTranslationKey = "ShootReportWeapon" });
+                
+                // Apparel
                 else if (tDef.IsApparel)
                     tDef.comps.Add(new CompProperties_Renamable() { renameTranslationKey = "RenameEverything.RenameApparel", inspectStringTranslationKey = "Apparel" });
+                
+                // Building
                 else if (tDef.IsBuildingArtificial)
                     tDef.comps.Add(new CompProperties_Renamable() { renameTranslationKey = "RenameEverything.RenameBuilding", inspectStringTranslationKey = "RenameEverything.Building" });
-                else if (tDef.thingClass.IsClassOrSubclassOf(typeof(Plant)))
+                
+                // Plant
+                else if (typeof(Plant).IsAssignableFrom(tDef.thingClass))
                     tDef.comps.Add(new CompProperties_Renamable() { renameTranslationKey = "RenameEverything.RenamePlant", inspectStringTranslationKey = "RenameEverything.Plant" });
-                else if (!tDef.thingClass.IsClassOrSubclassOf(typeof(Pawn)))
+
+                // Not a pawn or a corpse
+                else if (!typeof(Pawn).IsAssignableFrom(tDef.thingClass) && !typeof(Corpse).IsAssignableFrom(tDef.thingClass))
                     tDef.comps.Add(new CompProperties_Renamable());
             }
         }
