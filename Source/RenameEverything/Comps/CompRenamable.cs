@@ -40,7 +40,7 @@ namespace RenameEverything
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
-            return RenameUtility.RenameGizmos(this, Props.renameTranslationKey);
+            return RenameUtility.RenameGizmos(this, Props.renameTranslationKey, Props.inspectStringTranslationKey);
         }
 
         public override void PostExposeData()
@@ -52,7 +52,7 @@ namespace RenameEverything
 
         public override string CompInspectStringExtra()
         {
-            return Named ? $"{(Props.inspectStringTranslationKey ?? "RenameEverything.Object").Translate()}: {cachedLabel.CapitalizeFirst()}" : null;
+            return Named ? $"{Props.inspectStringTranslationKey.Translate()}: {cachedLabel.CapitalizeFirst()}" : null;
         }
 
     }

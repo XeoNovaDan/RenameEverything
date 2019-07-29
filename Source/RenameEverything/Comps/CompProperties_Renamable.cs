@@ -17,8 +17,8 @@ namespace RenameEverything
             compClass = typeof(CompRenamable);
         }
 
-        public string renameTranslationKey;
-        public string inspectStringTranslationKey;
+        public string renameTranslationKey = "RenameEverything.RenameObject";
+        public string inspectStringTranslationKey = "RenameEverything.Object";
 
     }
 

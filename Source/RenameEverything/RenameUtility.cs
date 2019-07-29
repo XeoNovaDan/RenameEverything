@@ -12,13 +12,14 @@ namespace RenameEverything
     public static class RenameUtility
     {
 
-        public static IEnumerable<Gizmo> RenameGizmos(CompRenamable renamableComp, string renameTranslationKey = null, string removeNameTranslationKey = null)
+        public static IEnumerable<Gizmo> RenameGizmos(CompRenamable renamableComp, string renameTranslationKey = null, string descriptionFillerTranslationKey = null, string removeNameTranslationKey = null)
         {
+            string filler = descriptionFillerTranslationKey.Translate().UncapitalizeFirst();
             yield return new Command_Rename()
             {
                 renamable = renamableComp,
-                defaultLabel = (renameTranslationKey ?? "RenameEverything.RenameObject").Translate(),
-                defaultDesc = "RenameEverything.RenameGizmo_Description".Translate(renamableComp.Props.inspectStringTranslationKey.Translate()),
+                defaultLabel = renameTranslationKey.Translate(),
+                defaultDesc = "RenameEverything.RenameGizmo_Description".Translate(filler),
                 icon = TexButton.RenameTex,
                 hotKey = KeyBindingDefOf.Misc1,
             };
@@ -28,7 +29,7 @@ namespace RenameEverything
                 yield return new Command_Action()
                 {
                     defaultLabel = (removeNameTranslationKey ?? "RenameEverything.RemoveName").Translate(),
-                    defaultDesc = "RenameEverything.RemoveName_Description".Translate(),
+                    defaultDesc = "RenameEverything.RemoveName_Description".Translate(filler),
                     icon = TexButton.DeleteX,
                     action = () => renamableComp.Named = false,
                 };

@@ -32,7 +32,7 @@ namespace RenameEverything
                         {
                             var renamableComp = equipmentTracker.Primary.GetComp<CompRenamable>();
                             if (renamableComp != null)
-                                __result = __result.Concat(RenameUtility.RenameGizmos(renamableComp));
+                                __result = __result.Concat(RenameUtility.RenameGizmos(renamableComp, "RenameEverything.RenameWeapon", "ShootReportWeapon"));
                         }
 
                         // Integration with Dual Wield
@@ -42,7 +42,7 @@ namespace RenameEverything
                             if (secondaryRenamableComp != null)
                             {
                                 if (RenameEverythingSettings.offHandRenameGizmos)
-                                    __result = __result.Concat(RenameUtility.RenameGizmos(secondaryRenamableComp, "RenameEverything.RenameOffHandWeapon", "RenameEverything.RemoveOffHandName"));
+                                    __result = __result.Concat(RenameUtility.RenameGizmos(secondaryRenamableComp, "RenameEverything.RenameOffHandWeapon", "ShootReportWeapon", "RenameEverything.RemoveOffHandName"));
                                 else
                                     __result = __result.Concat(RenameUtility.RenameGizmos(secondaryRenamableComp));
                             }

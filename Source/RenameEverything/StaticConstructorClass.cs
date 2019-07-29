@@ -15,20 +15,6 @@ namespace RenameEverything
 
         static StaticConstructorClass()
         {
-            //// Add CompRenamable to all weapon and turret ThingDefs
-            //foreach (var tDef in DefDatabase<ThingDef>.AllDefs)
-            //{
-            //    if (tDef.IsWeapon || tDef.thingClass.IsSubclassOf(typeof(Building_Turret)))
-            //    {
-            //        if (tDef.comps == null)
-            //            tDef.comps = new List<CompProperties>();
-
-            //        if (tDef.IsWeapon)
-            //            tDef.comps.Add(new CompProperties_Renamable() { inspectStringTranlationKey = "ShootReportWeapon", renameTranslationKey = "RenameEverything.RenameWeapon" });
-            //        else
-            //            tDef.comps.Add(new CompProperties_Renamable() { inspectStringTranlationKey = "Turret", renameTranslationKey = "RenameEverything.RenameTurret" });
-            //            }
-            //}
             foreach (var tDef in DefDatabase<ThingDef>.AllDefs.Where(t => t.thingClass != null && t.thingClass.IsClassOrSubclassOf(typeof(ThingWithComps))))
             {
                 if (tDef.comps == null)
@@ -36,6 +22,8 @@ namespace RenameEverything
 
                 if (tDef.IsWeapon)
                     tDef.comps.Add(new CompProperties_Renamable() { renameTranslationKey = "RenameEverything.RenameWeapon", inspectStringTranslationKey = "ShootReportWeapon" });
+                else if (tDef.IsApparel)
+                    tDef.comps.Add(new CompProperties_Renamable() { renameTranslationKey = "RenameEverything.RenameApparel", inspectStringTranslationKey = "Apparel" });
                 else if (tDef.IsBuildingArtificial)
                     tDef.comps.Add(new CompProperties_Renamable() { renameTranslationKey = "RenameEverything.RenameBuilding", inspectStringTranslationKey = "RenameEverything.Building" });
                 else if (tDef.thingClass.IsClassOrSubclassOf(typeof(Plant)))

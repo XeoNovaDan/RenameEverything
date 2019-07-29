@@ -25,6 +25,7 @@
 
     <!-- Gizmos -->
     <RenameEverything.RenameWeapon>Rename weapon</RenameEverything.RenameWeapon>
+    <RenameEverything.RenameApparel>Rename apparel</RenameEverything.RenameApparel>
     <RenameEverything.RenameBuilding>Rename building</RenameEverything.RenameBuilding>
     <RenameEverything.RenamePlant>Rename plant</RenameEverything.RenamePlant>
     <RenameEverything.RenameObject>Rename object</RenameEverything.RenameObject>
@@ -33,7 +34,7 @@
 
     <RenameEverything.RemoveName>Remove name</RenameEverything.RemoveName>
     <RenameEverything.RemoveOffHandName>Remove off-hand name</RenameEverything.RemoveOffHandName>
-    <RenameEverything.RemoveName_Description>Remove the name that you've given to this weapon.</RenameEverything.RemoveName_Description>
+    <RenameEverything.RemoveName_Description>Remove the name that you've given to this {0}.</RenameEverything.RemoveName_Description>
 
     <!-- Comps -->
     <RenameEverything.Building>Building</RenameEverything.Building>
