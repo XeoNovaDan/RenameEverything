@@ -30,12 +30,18 @@
     <RenameEverything.RenamePlant>Rename plant</RenameEverything.RenamePlant>
     <RenameEverything.RenameObject>Rename object</RenameEverything.RenameObject>
     <RenameEverything.RenameGizmo_Description>Change the name of this {0} to one of your liking.</RenameEverything.RenameGizmo_Description>
+
+    <RenameEverything.RecolourLabel>Recolour label</RenameEverything.RecolourLabel>
+    <RenameEverything.RecolourLabel_Description>Change the colour of this {0}'s label to one of your liking.</RenameEverything.RecolourLabel_Description>
+
     <RenameEverything.RemoveName>Remove name</RenameEverything.RemoveName>
     <RenameEverything.RemoveName_Description>Remove the name that you've given to this {0}.</RenameEverything.RemoveName_Description>
 
     <RenameEverything.RenameEquipment>Rename equipment</RenameEverything.RenameEquipment>
     <RenameEverything.RenameEquipment_Description>Change the name of a piece of this pawn's equipment to one of your liking.</RenameEverything.RenameEquipment_Description>
     <RenameEverything.RemoveEquipmentName_Description>Remove the name that you've given to a piece of this pawn's equipment.</RenameEverything.RemoveEquipmentName_Description>
+
+    <RenameEverything.RecolourEquipmentLabel_Description>Change the colour of a piece of this pawn's equipment's label to one of your liking.</RenameEverything.RecolourEquipmentLabel_Description>
 
     <!-- Comps -->
     <RenameEverything.Building>Building</RenameEverything.Building>

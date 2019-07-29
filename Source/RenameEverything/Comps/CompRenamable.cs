@@ -54,8 +54,8 @@ namespace RenameEverything
             //yield return new Command_RecolourLabel()
             //{
             //    renamable = this,
-            //    defaultLabel = "Recolour",
-            //    defaultDesc = "Placeholder desc",
+            //    defaultLabel = "RenameEverything.RecolourLabel".Translate(filler),
+            //    defaultDesc = "RenameEverything.RecolourLabel_Description".Translate(),
             //    icon = TexButton.RenameTex
             //};
 
