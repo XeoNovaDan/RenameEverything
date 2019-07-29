@@ -22,30 +22,31 @@ namespace RenameEverything
 
             public static void Postfix(Pawn __instance, ref IEnumerable<Gizmo> __result)
             {
-                // Add weapon rename gizmos to pawn if they have a weapon equipped and that weapon has CompRenamable (which should be true 99.9% of the time)
+                // Add weapon rename gizmos to pawn if they have any equipment that has CompRenamable
                 if (RenameEverythingSettings.pawnWeaponRenameGizmos)
                 {
-                    var equipmentTracker = __instance.equipment;
-                    if (equipmentTracker != null)
+                    var renamables = RenameUtility.GetRenamableEquipmentComps(__instance);
+                    if (renamables.Any())
                     {
-                        if (equipmentTracker.Primary != null)
+                        var renameGizmo = new Command_RenameFloatMenu()
                         {
-                            var renamableComp = equipmentTracker.Primary.GetComp<CompRenamable>();
-                            if (renamableComp != null)
-                                __result = __result.Concat(RenameUtility.RenameGizmos(renamableComp, "RenameEverything.RenameWeapon", "ShootReportWeapon"));
-                        }
+                            pawnRenamables = new Pair<Pawn, List<CompRenamable>>(__instance, renamables.ToList()),
+                            defaultLabel = "RenameEverything.RenameEquipment".Translate(),
+                            defaultDesc = "RenameEverything.RenameEquipment_Description".Translate(),
+                            icon = TexButton.RenameTex,
+                        };
+                        __result = __result.Add(renameGizmo);
 
-                        // Integration with Dual Wield
-                        if (ModCompatibilityCheck.DualWield && ReflectedMethods.TryGetOffHandEquipment(equipmentTracker, out ThingWithComps secondary))
+                        if (renamables.Any(r => r.Named))
                         {
-                            var secondaryRenamableComp = secondary.GetComp<CompRenamable>();
-                            if (secondaryRenamableComp != null)
+                            var removeNameGizmo = new Command_RemoveNameFloatMenu()
                             {
-                                if (RenameEverythingSettings.offHandRenameGizmos)
-                                    __result = __result.Concat(RenameUtility.RenameGizmos(secondaryRenamableComp, "RenameEverything.RenameOffHandWeapon", "ShootReportWeapon", "RenameEverything.RemoveOffHandName"));
-                                else
-                                    __result = __result.Concat(RenameUtility.RenameGizmos(secondaryRenamableComp));
-                            }
+                                pawnRenamables = new Pair<Pawn, List<CompRenamable>>(__instance, renamables.ToList()),
+                                defaultLabel = "RenameEverything.RemoveName".Translate(),
+                                defaultDesc = "RenameEverything.RemoveEquipmentName_Description".Translate(),
+                                icon = TexButton.DeleteX,
+                            };
+                            __result = __result.Add(removeNameGizmo);
                         }
                     }
                 }

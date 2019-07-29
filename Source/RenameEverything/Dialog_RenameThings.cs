@@ -15,7 +15,6 @@ namespace RenameEverything
         public Dialog_RenameThings(List<CompRenamable> renamableComps)
         {
             this.renamableComps = renamableComps;
-            curName = renamableComps.Count == 1 ? renamableComps[0].name : String.Empty;
 
             if (renamableComps.Count == 1)
             {
@@ -27,6 +26,12 @@ namespace RenameEverything
             }
             else
                 curName = String.Empty;
+        }
+
+        public Dialog_RenameThings(CompRenamable renamableComp)
+        {
+            renamableComps = new List<CompRenamable>() { renamableComp };
+            curName = renamableComp.Named ? renamableComp.name : renamableComp.parent.LabelCapNoCount;
         }
 
         protected override AcceptanceReport NameIsValid(string name)

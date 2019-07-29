@@ -52,7 +52,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Command_Rename.cs" />
+    <Compile Include="Gizmos\Command_RemoveNameFloatMenu.cs" />
+    <Compile Include="Gizmos\Command_RenameFloatMenu.cs" />
+    <Compile Include="Gizmos\Command_Renamables.cs" />
+    <Compile Include="Gizmos\Command_Rename.cs" />
     <Compile Include="Comps\CompProperties_Renamable.cs" />
     <Compile Include="Reflection\ReflectedMethods.cs" />
     <Compile Include="ModCompatibilityCheck.cs" />

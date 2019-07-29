@@ -40,7 +40,26 @@ namespace RenameEverything
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
-            return RenameUtility.RenameGizmos(this, Props.renameTranslationKey, Props.inspectStringTranslationKey);
+            string filler = Props.inspectStringTranslationKey.Translate().UncapitalizeFirst();
+            yield return new Command_Rename()
+            {
+                renamable = this,
+                defaultLabel = Props.renameTranslationKey.Translate(),
+                defaultDesc = "RenameEverything.RenameGizmo_Description".Translate(filler),
+                icon = TexButton.RenameTex,
+                hotKey = KeyBindingDefOf.Misc1,
+            };
+
+            if (Named)
+            {
+                yield return new Command_Action()
+                {
+                    defaultLabel = "RenameEverything.RemoveName".Translate(),
+                    defaultDesc = "RenameEverything.RemoveName_Description".Translate(filler),
+                    icon = TexButton.DeleteX,
+                    action = () => Named = false,
+                };
+            }
         }
 
         public override void PostExposeData()
