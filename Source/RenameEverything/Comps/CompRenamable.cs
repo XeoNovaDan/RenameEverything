@@ -102,7 +102,7 @@ namespace RenameEverything
                     {
                         defaultLabel = "RenameEverything.AllowMerging".Translate(),
                         defaultDesc = "RenameEverything.AllowMerging_Description".Translate(),
-                        icon = TexButton.RenameTex,
+                        icon = TexButton.AllowMergingTex,
                         isActive = () => allowMerge,
                         toggleAction = () => allowMerge = !allowMerge
                     };

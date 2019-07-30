@@ -65,7 +65,6 @@
     <Compile Include="Gizmos\Command_RenamablesFromPawn.cs" />
     <Compile Include="Gizmos\Command_Rename.cs" />
     <Compile Include="Comps\CompProperties_Renamable.cs" />
-    <None Include="HarmonyPatches\Patch_TransferableUtility.cs" />
     <Compile Include="HarmonyPatches\Patch_TransferableUIUtility.cs" />
     <Compile Include="HarmonyPatches\Patch_ITab_Pawn_Gear.cs" />
     <Compile Include="HarmonyPatches\Patch_InspectPaneUtility.cs" />
