@@ -2,23 +2,20 @@
 <LanguageData>
 
     <!-- Settings -->
-    <RenameEverything.SettingsCategory>Rename Your Weapons</RenameEverything.SettingsCategory>
+    <RenameEverything.SettingsCategory>Rename Everything</RenameEverything.SettingsCategory>
 
-    <RenameEverything.AppendCachedLabel>Append original label to weapon's name</RenameEverything.AppendCachedLabel>
-    <RenameEverything.AppendCachedLabel_Tooltip>When you rename a weapon, its original label will be added afterwards in brackets. For example, if you named some frag grenades 'The Holy Hand Grenade of Antioch', the weapon's label will be 'The Holy Hand Grenade of Antioch (Frag grenades)'.</RenameEverything.AppendCachedLabel_Tooltip>
+    <RenameEverything.AppendCachedLabel>Append original label to object's name</RenameEverything.AppendCachedLabel>
+    <RenameEverything.AppendCachedLabel_Tooltip>When you rename an object, its original label will be added afterwards in brackets. For example, if you named some frag grenades 'The Holy Hand Grenade of Antioch', the weapon's label will be 'The Holy Hand Grenade of Antioch (Frag grenades)'.</RenameEverything.AppendCachedLabel_Tooltip>
 
     <RenameEverything.AppendCachedLabelInThingHolder>Only append when equipped</RenameEverything.AppendCachedLabelInThingHolder>
-    <RenameEverything.AppendCachedLabelInThingHolder_Tooltip>The weapon's original label will only be added after its given name when the weapon is equipped. Also applies when in a pawn's inventory or put inside any container such as a transport pod.</RenameEverything.AppendCachedLabelInThingHolder_Tooltip>
+    <RenameEverything.AppendCachedLabelInThingHolder_Tooltip>The object's original label will only be added after its given name when the weapon is equipped. Also applies when in a pawn's inventory or put inside any container such as a transport pod.</RenameEverything.AppendCachedLabelInThingHolder_Tooltip>
 
-    <RenameEverything.ShowRenameGizmosOnPawns>Show weapon renaming buttons on pawns</RenameEverything.ShowRenameGizmosOnPawns>
-    <RenameEverything.ShowRenameGizmosOnPawns_Tooltip>When pawns are selected, renaming buttons for their equipped weapons will show.</RenameEverything.ShowRenameGizmosOnPawns_Tooltip>
+    <RenameEverything.ShowRenameGizmosOnPawns>Show equipment renaming buttons on pawns</RenameEverything.ShowRenameGizmosOnPawns>
+    <RenameEverything.ShowRenameGizmosOnPawns_Tooltip>When pawns are selected, renaming buttons for their equipped weapons and worn apparel will show.</RenameEverything.ShowRenameGizmosOnPawns_Tooltip>
 
 
     <RenameEverything.DualWieldIntegration>Dual Wield Integration</RenameEverything.DualWieldIntegration>
     <RenameEverything.DualWieldNotActive>Dual Wield is currently not active.</RenameEverything.DualWieldNotActive>
-
-    <RenameEverything.ShowOffHandRenameGizmosOnPawns>Show off-hand weapon renaming buttons on pawns</RenameEverything.ShowOffHandRenameGizmosOnPawns>
-    <RenameEverything.ShowOffHandRenameGizmosOnPawns_Tooltip>When pawns are selected, renaming buttons for their off-hand weapons will show alongside the buttons for their primary weapons. If disabled, name changes will apply to both weapons. Will not show if 'Show renaming buttons on pawns' is disabled.</RenameEverything.ShowOffHandRenameGizmosOnPawns_Tooltip>
 
     <RenameEverything.ShowBothWeaponNamesDualWield>Show both weapon names when dual wielding</RenameEverything.ShowBothWeaponNamesDualWield>
     <RenameEverything.ShowBothWeaponNamesDualWield_Tooltip>When selecting a pawn who is currently dual wielding, both of their equipped weapons' names will show next to 'Equipped:' in the bottom-left corner of the screen.</RenameEverything.ShowBothWeaponNamesDualWield_Tooltip>
