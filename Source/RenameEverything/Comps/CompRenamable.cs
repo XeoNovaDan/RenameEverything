@@ -12,8 +12,8 @@ namespace RenameEverything
     public class CompRenamable : ThingComp
     {
 
-        private string cachedLabel;
-        private string _name;
+        private string cachedLabel = String.Empty;
+        private string _name = String.Empty;
         public Color labelColour = Color.white;
         private bool allowMerge;
 

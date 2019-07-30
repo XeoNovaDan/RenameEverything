@@ -14,7 +14,7 @@ namespace RenameEverything
 
         public override bool Matches(Thing t)
         {
-            return AlwaysMatches(t.def) || t.TryGetComp<CompRenamable>().Named;
+            return AlwaysMatches(t.def) || !t.TryGetComp<CompRenamable>().Named;
         }
 
         public override bool AlwaysMatches(ThingDef def)
