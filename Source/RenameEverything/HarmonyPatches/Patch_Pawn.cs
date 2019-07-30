@@ -37,6 +37,15 @@ namespace RenameEverything
                         };
                         __result = __result.Add(renameGizmo);
 
+                        var recolourGizmo = new Command_RecolourLabelFloatMenu()
+                        {
+                            pawnRenamables = new Pair<Pawn, List<CompRenamable>>(__instance, renamables.ToList()),
+                            defaultLabel = "RenameEverything.RecolourLabel".Translate(),
+                            defaultDesc = "RenameEverything.RecolourEquipmentLabel_Description".Translate(),
+                            icon = TexButton.RenameTex,
+                        };
+                        __result = __result.Add(recolourGizmo);
+
                         if (renamables.Any(r => r.Named))
                         {
                             var removeNameGizmo = new Command_RemoveNameFloatMenu()

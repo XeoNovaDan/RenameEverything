@@ -57,7 +57,7 @@ namespace RenameEverything
                 previousGUIColour = GUI.color;
                 if (cachedSelectedThings.Count == 1 && cachedSelectedThings[0].TryGetComp<CompRenamable>() is CompRenamable renamableComp)
                 {
-                    GUI.color = renamableComp.colour;
+                    GUI.color = renamableComp.Colour;
                 }
             }
 

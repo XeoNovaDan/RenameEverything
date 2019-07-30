@@ -14,7 +14,14 @@ namespace RenameEverything
 
         private string cachedLabel;
         public string name;
-        public Color colour = Color.white;
+
+        private float labelColourR = 1;
+        private float labelColourG = 1;
+        private float labelColourB = 1;
+        private float labelColourA = 1;
+
+        [Unsaved]
+        private Color cachedColour;
 
         public CompProperties_Renamable Props => (CompProperties_Renamable)props;
 
@@ -25,6 +32,24 @@ namespace RenameEverything
             {
                 if (!value)
                     name = String.Empty;
+            }
+        }
+
+        public Color Colour
+        {
+            get
+            {
+                if (cachedColour == default)
+                    cachedColour = new Color(labelColourR, labelColourG, labelColourB, labelColourA);
+                return cachedColour;
+            }
+            set
+            {
+                labelColourR = value.r;
+                labelColourG = value.g;
+                labelColourB = value.b;
+                labelColourA = value.a;
+                cachedColour = default;
             }
         }
 
@@ -51,13 +76,13 @@ namespace RenameEverything
                 hotKey = KeyBindingDefOf.Misc1,
             };
 
-            //yield return new Command_RecolourLabel()
-            //{
-            //    renamable = this,
-            //    defaultLabel = "RenameEverything.RecolourLabel".Translate(filler),
-            //    defaultDesc = "RenameEverything.RecolourLabel_Description".Translate(),
-            //    icon = TexButton.RenameTex
-            //};
+            yield return new Command_RecolourLabel()
+            {
+                renamable = this,
+                defaultLabel = "RenameEverything.RecolourLabel".Translate(),
+                defaultDesc = "RenameEverything.RecolourLabel_Description".Translate(filler),
+                icon = TexButton.RenameTex
+            };
 
             if (Named)
             {
@@ -75,7 +100,12 @@ namespace RenameEverything
         {
             Scribe_Values.Look(ref cachedLabel, "cachedLabel");
             Scribe_Values.Look(ref name, "name");
-            Scribe_Deep.Look(ref colour, "colour", colour.r, colour.g, colour.b, colour.a);
+
+            Scribe_Values.Look(ref labelColourR, "labelColourR", 1);
+            Scribe_Values.Look(ref labelColourG, "labelColourG", 1);
+            Scribe_Values.Look(ref labelColourB, "labelColourB", 1);
+            Scribe_Values.Look(ref labelColourA, "labelColourA", 1);
+
             base.PostExposeData();
         }
 

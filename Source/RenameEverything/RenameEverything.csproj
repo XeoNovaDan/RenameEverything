@@ -52,9 +52,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dialogs\Dialog_RecolourLabel.cs" />
     <Compile Include="Gizmos\Command_RemoveNameFloatMenu.cs" />
     <Compile Include="Gizmos\Command_RecolourLabel.cs" />
     <Compile Include="Gizmos\Command_Renamable.cs" />
+    <Compile Include="Gizmos\Command_RecolourLabelFloatMenu.cs" />
     <Compile Include="Gizmos\Command_RenameFloatMenu.cs" />
     <Compile Include="Gizmos\Command_RenamablesFromPawn.cs" />
     <Compile Include="Gizmos\Command_Rename.cs" />
@@ -71,7 +73,7 @@
     <Compile Include="RenameUtility.cs" />
     <Compile Include="TexButton.cs" />
     <Compile Include="StaticConstructorClass.cs" />
-    <Compile Include="Dialog_RenameThings.cs" />
+    <Compile Include="Dialogs\Dialog_RenameThings.cs" />
     <Compile Include="Comps\CompRenamable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

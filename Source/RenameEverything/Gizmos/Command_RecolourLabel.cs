@@ -15,7 +15,7 @@ namespace RenameEverything
         public override void ProcessInput(Event ev)
         {
             base.ProcessInput(ev);
-            Find.WindowStack.Add(new Dialog_RenameThings(renamables));
+            Find.WindowStack.Add(new Dialog_RecolourLabel(renamables));
         }
 
     }

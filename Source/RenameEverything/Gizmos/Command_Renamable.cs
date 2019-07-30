@@ -27,7 +27,7 @@ namespace RenameEverything
         {
             if (renamables == null)
                 renamables = new List<CompRenamable>();
-            renamables.Add(((Command_Rename)other).renamable);
+            renamables.Add(((Command_Renamable)other).renamable);
             return false;
         }
 
