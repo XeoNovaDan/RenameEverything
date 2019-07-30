@@ -24,12 +24,22 @@
   <RenameEverything.ShowBothWeaponNamesDualWield_Tooltip>現在二刀流な装備をしているポーンを選択すると、装備している両方の武器の名前が画面の左下隅にある「装備」の横に表示されます。</RenameEverything.ShowBothWeaponNamesDualWield_Tooltip>
 
   <!-- Gizmos -->
-  <RenameEverything.RenameWeapon>名前を変更</RenameEverything.RenameWeapon>
-  <RenameEverything.RenameOffHandWeapon>逆手武器の 名前を変更</RenameEverything.RenameOffHandWeapon>
-  <RenameEverything.RenameGizmo_Description>この武器の名前を好きな名前に変更します。</RenameEverything.RenameGizmo_Description>
-
+  <RenameEverything.RenameWeapon>武器名変更</RenameEverything.RenameWeapon>
+  <RenameEverything.RenameApparel>衣服名変更</RenameEverything.RenameApparel>
+  <RenameEverything.RenameBuilding>建造物名変更</RenameEverything.RenameBuilding>
+  <RenameEverything.RenamePlant>植物名変更</RenameEverything.RenamePlant>
+  <RenameEverything.RenameObject>物体名変更</RenameEverything.RenameObject>
+  <RenameEverything.RenameGizmo_Description>この{0}の名前を好きな名前に変更します。</RenameEverything.RenameGizmo_Description>
   <RenameEverything.RemoveName>名前を削除</RenameEverything.RemoveName>
-  <RenameEverything.RemoveOffHandName>逆手武器の 名前を削除</RenameEverything.RemoveOffHandName>
-  <RenameEverything.RemoveName_Description>この武器に付けた名前を削除します。</RenameEverything.RemoveName_Description>
+  <RenameEverything.RemoveName_Description>あなたがこの{0}に付けた名前を削除します。</RenameEverything.RemoveName_Description>
+
+  <RenameEverything.RenameEquipment>装備名変更</RenameEverything.RenameEquipment>
+  <RenameEverything.RenameEquipment_Description>このポーンの装備しているアイテムの名前を好きな名前に変更します。</RenameEverything.RenameEquipment_Description>
+  <RenameEverything.RemoveEquipmentName_Description>このポーンの装備しているアイテムに付けた名前を削除します。</RenameEverything.RemoveEquipmentName_Description>
+
+  <!-- Comps -->
+  <RenameEverything.Building>建築物</RenameEverything.Building>
+  <RenameEverything.Plant>植物</RenameEverything.Plant>
+  <RenameEverything.Object>物体</RenameEverything.Object>
 
 </LanguageData>
