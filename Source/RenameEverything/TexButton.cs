@@ -15,7 +15,7 @@ namespace RenameEverything
 
         public static readonly Texture2D DeleteX = ContentFinder<Texture2D>.Get("UI/Buttons/Delete", true);
         public static readonly Texture2D RenameTex = ContentFinder<Texture2D>.Get("UI/Buttons/Rename", true);
-        public static readonly Texture2D ColourPreviewTex = ContentFinder<Texture2D>.Get("UI/ColourPreview", true);
+        public static readonly Texture2D RecolourTex = ContentFinder<Texture2D>.Get("UI/Buttons/Recolour", true);
 
     }
 

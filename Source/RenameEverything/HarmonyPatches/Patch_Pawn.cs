@@ -42,7 +42,7 @@ namespace RenameEverything
                             pawnRenamables = new Pair<Pawn, List<CompRenamable>>(__instance, renamables.ToList()),
                             defaultLabel = "RenameEverything.RecolourLabel".Translate(),
                             defaultDesc = "RenameEverything.RecolourEquipmentLabel_Description".Translate(),
-                            icon = TexButton.RenameTex,
+                            icon = TexButton.RecolourTex,
                         };
                         __result = __result.Add(recolourGizmo);
 

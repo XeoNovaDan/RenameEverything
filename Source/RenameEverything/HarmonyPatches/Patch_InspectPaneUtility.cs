@@ -25,9 +25,7 @@ namespace RenameEverything
                 var instructionList = instructions.ToList();
 
                 var labelInfo = AccessTools.Method(typeof(Widgets), nameof(Widgets.Label), new Type[] { typeof(Rect), typeof(string) });
-
-                var changeGUIColourPreLabelDrawInfo = AccessTools.Method(typeof(Patch_InspectPaneOnGUI), nameof(ChangeGUIColourPreLabelDraw));
-                var changeGUIColourPostLabelDrawInfo = AccessTools.Method(typeof(Patch_InspectPaneOnGUI), nameof(ChangeGUIColourPostLabelDraw));
+                var cachedSelectedThingsInfo = AccessTools.Field(typeof(Patch_InspectPaneOnGUI), nameof(cachedSelectedThings));
 
                 for (int i = 0; i < instructionList.Count; i++)
                 {
@@ -40,34 +38,16 @@ namespace RenameEverything
                         if (firstAhead.opcode == OpCodes.Ldloc_S && ((LocalBuilder)firstAhead.operand).LocalIndex == 5 &&
                             secondAhead.opcode == OpCodes.Call && secondAhead.operand == labelInfo)
                         {
-                            //yield return new CodeInstruction(OpCodes.Ldsfld, selectedThingsInfo);
-                            yield return new CodeInstruction(OpCodes.Call, changeGUIColourPreLabelDrawInfo);
+                            yield return new CodeInstruction(OpCodes.Ldsfld, cachedSelectedThingsInfo);
+                            yield return new CodeInstruction(OpCodes.Call, RenameUtility.ChangeGUIColourPreLabelDraw_IEnumerableThing_Info);
 
-                            instructionList.Insert(i + 3, new CodeInstruction(OpCodes.Call, changeGUIColourPostLabelDrawInfo));
+                            instructionList.Insert(i + 3, new CodeInstruction(OpCodes.Call, RenameUtility.ChangeGUIColourPostLabelDraw_Info));
                         }
                     }
 
                     yield return instruction;
                 }
             }
-
-            private static void ChangeGUIColourPreLabelDraw()
-            {
-                // Store the current GUI colour and change the GUI colour to what's defined in renamableComp
-                previousGUIColour = GUI.color;
-                if (cachedSelectedThings.Count == 1 && cachedSelectedThings[0].TryGetComp<CompRenamable>() is CompRenamable renamableComp)
-                {
-                    GUI.color = renamableComp.Colour;
-                }
-            }
-
-            private static void ChangeGUIColourPostLabelDraw()
-            {
-                // After the label has been drawn, change the colour back to the previous one
-                GUI.color = previousGUIColour;
-            }
-
-            private static Color previousGUIColour;
 
             public static List<Thing> cachedSelectedThings = new List<Thing>();
 

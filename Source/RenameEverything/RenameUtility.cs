@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Reflection;
 using UnityEngine;
 using Verse;
 using RimWorld;
+using Harmony;
 
 namespace RenameEverything
 {
 
     public static class RenameUtility
     {
+
+        private static Color cachedGUIColour;
 
         public static IEnumerable<CompRenamable> GetRenamableEquipmentComps(Pawn pawn)
         {
@@ -26,6 +30,35 @@ namespace RenameEverything
                     if (ap.GetComp<CompRenamable>() is CompRenamable renamableComp)
                         yield return renamableComp;
         }
+
+        public static void ChangeGUIColourPreLabelDraw(IEnumerable<Thing> things)
+        {
+            cachedGUIColour = GUI.color;
+            if (things.Count() == 1)
+                ChangeGUIColourPreLabelDraw(things.First());
+        }
+
+        public static MethodInfo ChangeGUIColourPreLabelDraw_IEnumerableThing_Info => AccessTools.Method(typeof(RenameUtility), nameof(ChangeGUIColourPreLabelDraw), new Type[] { typeof(IEnumerable<Thing>) });
+
+        public static void ChangeGUIColourPreLabelDraw(Thing thing)
+        {
+            // Store the current GUI labelColour and change the GUI labelColour to what's defined in renamableComp
+            cachedGUIColour = GUI.color;
+            if (thing.TryGetComp<CompRenamable>() is CompRenamable renamableComp)
+            {
+                GUI.color = renamableComp.labelColour;
+            }
+        }
+
+        public static MethodInfo ChangeGUIColourPreLabelDraw_Thing_Info => AccessTools.Method(typeof(RenameUtility), nameof(ChangeGUIColourPreLabelDraw), new Type[] { typeof(Thing) });
+
+        public static void ChangeGUIColourPostLabelDraw()
+        {
+            // After the label has been drawn, change the labelColour back to the previous one
+            GUI.color = cachedGUIColour;
+        }
+
+        public static MethodInfo ChangeGUIColourPostLabelDraw_Info => AccessTools.Method(typeof(RenameUtility), nameof(ChangeGUIColourPostLabelDraw));
 
     }
 

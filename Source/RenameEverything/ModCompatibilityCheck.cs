@@ -12,6 +12,8 @@ namespace RenameEverything
     public static class ModCompatibilityCheck
     {
 
+        public static bool RPGStyleInventory => ModsConfig.ActiveModsInLoadOrder.Any(m => m.Name == "[1.0] RPG Style Inventory");
+
         public static bool DualWield => ModsConfig.ActiveModsInLoadOrder.Any(m => m.Name == "Dual Wield");
 
     }

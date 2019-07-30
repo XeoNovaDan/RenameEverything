@@ -5,6 +5,7 @@ using System.Text;
 using UnityEngine;
 using Verse;
 using RimWorld;
+using ColourPicker;
 
 namespace RenameEverything
 {
@@ -15,7 +16,7 @@ namespace RenameEverything
         public override void ProcessInput(Event ev)
         {
             base.ProcessInput(ev);
-            Find.WindowStack.Add(new Dialog_RecolourLabel(renamables));
+            Find.WindowStack.Add(new Dialog_ColourPicker(renamables[0].labelColour, c => renamables.ForEach(r => r.labelColour = c)));
         }
 
     }

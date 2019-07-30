@@ -20,7 +20,7 @@ namespace RenameEverything
             {
                 var renamable = renamableComps[0];
                 if (renamable.Named)
-                    curName = renamable.name;
+                    curName = renamable.Name;
                 else
                     curName = renamable.parent.LabelCapNoCount;
             }
@@ -31,7 +31,7 @@ namespace RenameEverything
         public Dialog_RenameThings(CompRenamable renamableComp)
         {
             renamableComps = new List<CompRenamable>() { renamableComp };
-            curName = renamableComp.Named ? renamableComp.name : renamableComp.parent.LabelCapNoCount;
+            curName = renamableComp.Named ? renamableComp.Name : renamableComp.parent.LabelCapNoCount;
         }
 
         protected override AcceptanceReport NameIsValid(string name)
@@ -42,7 +42,7 @@ namespace RenameEverything
         protected override void SetName(string name)
         {
             foreach (var renamableComp in renamableComps)
-                renamableComp.name = name;
+                renamableComp.Name = name;
         }
 
         private List<CompRenamable> renamableComps = new List<CompRenamable>();
