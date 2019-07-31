@@ -2,16 +2,19 @@
 <LanguageData>
 
   <!-- Settings -->
-  <RenameEverything.SettingsCategory>Rename Your Weapons</RenameEverything.SettingsCategory>
+  <RenameEverything.SettingsCategory>Rename Everything</RenameEverything.SettingsCategory>
+
+  <RenameEverything.ShowNameOnGround>〇 地面にある場合に変更された名前を表示</RenameEverything.ShowNameOnGround>
+  <RenameEverything.ShowNameOnGround_Tooltip>名前を付けた物体が地面にある場合、その名前の短い名前は品質レベルの上に表示されます。</RenameEverything.ShowNameOnGround_Tooltip>
 
   <RenameEverything.AppendCachedLabel>〇 武器の名前にオリジナルの名称を付ける</RenameEverything.AppendCachedLabel>
   <RenameEverything.AppendCachedLabel_Tooltip>武器の名前を変更すると、改名された名前の後に元の名称がかっこ内に追加されます。たとえば、あなたが手榴弾を\n「アンティオキアの聖なる手榴弾」\nと改名した場合、武器の表示名は\n「アンティオキアの聖なる手榴弾（手榴弾）」\nとなります。</RenameEverything.AppendCachedLabel_Tooltip>
 
   <RenameEverything.AppendCachedLabelInThingHolder>〇 装備時のみ追加</RenameEverything.AppendCachedLabelInThingHolder>
-  <RenameEverything.AppendCachedLabelInThingHolder_Tooltip>武器の変更前の元の名称は、武器を装備している際は、変更された名前の後にだけ追加されます。ポーンのインベントリに持ち物として入っている場合や、または輸送ポッドなどのコンテナの中に置かれいている場合にも適用されます。</RenameEverything.AppendCachedLabelInThingHolder_Tooltip>
+  <RenameEverything.AppendCachedLabelInThingHolder_Tooltip>装備の変更前の元の名称は、名前が変更されたアイテムを装備している場合のみ、変更された名前の後に追加されます。ポーンのインベントリに持ち物として入っている場合や、または輸送ポッドなどのコンテナの中に置かれいている場合にも適用されます。</RenameEverything.AppendCachedLabelInThingHolder_Tooltip>
 
-  <RenameEverything.ShowRenameGizmosOnPawns>〇 ポーンに武器名変更ボタンを表示</RenameEverything.ShowRenameGizmosOnPawns>
-  <RenameEverything.ShowRenameGizmosOnPawns_Tooltip>ポーンを選択すると、装備している武器の名前を変更ボタンが表示されます。</RenameEverything.ShowRenameGizmosOnPawns_Tooltip>
+  <RenameEverything.ShowRenameGizmosOnPawns>〇 ポーンに装備名変更ボタンを表示</RenameEverything.ShowRenameGizmosOnPawns>
+  <RenameEverything.ShowRenameGizmosOnPawns_Tooltip>ポーンを選択すると、装備している武器と衣服の名前を変更ボタンが表示されます。</RenameEverything.ShowRenameGizmosOnPawns_Tooltip>
 
 
   <RenameEverything.DualWieldIntegration>Dual Wield Modと統合</RenameEverything.DualWieldIntegration>
@@ -30,12 +33,21 @@
   <RenameEverything.RenamePlant>植物名変更</RenameEverything.RenamePlant>
   <RenameEverything.RenameObject>物体名変更</RenameEverything.RenameObject>
   <RenameEverything.RenameGizmo_Description>この{0}の名前を好きな名前に変更します。</RenameEverything.RenameGizmo_Description>
+
+  <RenameEverything.RecolourLabel>名前の色変更</RenameEverything.RecolourLabel>
+  <RenameEverything.RecolourLabel_Description>この{0}の名前の色を好きな色に変更します。</RenameEverything.RecolourLabel_Description>
+
+  <RenameEverything.AllowMerging>スタック可能</RenameEverything.AllowMerging>
+  <RenameEverything.AllowMerging_Description>この物体を、違う名前か違う名前の色を付けた同じ種類の他の物体と重ねてスタック可能にします。</RenameEverything.AllowMerging_Description>
+
   <RenameEverything.RemoveName>名前を削除</RenameEverything.RemoveName>
   <RenameEverything.RemoveName_Description>あなたがこの{0}に付けた名前を削除します。</RenameEverything.RemoveName_Description>
 
   <RenameEverything.RenameEquipment>装備名変更</RenameEverything.RenameEquipment>
   <RenameEverything.RenameEquipment_Description>このポーンの装備しているアイテムの名前を好きな名前に変更します。</RenameEverything.RenameEquipment_Description>
   <RenameEverything.RemoveEquipmentName_Description>このポーンの装備しているアイテムに付けた名前を削除します。</RenameEverything.RemoveEquipmentName_Description>
+
+  <RenameEverything.RecolourEquipmentLabel_Description>このポーンの装備しているアイテムの名前の色を好きな色に変更します。</RenameEverything.RecolourEquipmentLabel_Description>
 
   <!-- Comps -->
   <RenameEverything.Building>建築物</RenameEverything.Building>
