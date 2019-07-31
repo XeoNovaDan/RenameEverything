@@ -5,6 +5,7 @@ using System.Text;
 using UnityEngine;
 using Verse;
 using RimWorld;
+using Multiplayer.API;
 
 namespace RenameEverything
 {
@@ -39,6 +40,7 @@ namespace RenameEverything
             return true;
         }
 
+        [SyncMethod]
         protected override void SetName(string name)
         {
             foreach (var renamableComp in renamableComps)

@@ -6,6 +6,7 @@ using UnityEngine;
 using Verse;
 using RimWorld;
 using ColourPicker;
+using Multiplayer.API;
 
 namespace RenameEverything
 {
@@ -16,7 +17,13 @@ namespace RenameEverything
         public override void ProcessInput(Event ev)
         {
             base.ProcessInput(ev);
-            Find.WindowStack.Add(new Dialog_ColourPicker(renamables[0].labelColour, c => renamables.ForEach(r => r.labelColour = c)));
+            Find.WindowStack.Add(new Dialog_ColourPicker(renamables[0].labelColour, c => Callback(c, renamables)));
+        }
+
+        [SyncMethod]
+        private void Callback(Color c, List<CompRenamable> renamableCompList)
+        {
+            renamableCompList.ForEach(r => r.labelColour = c);
         }
 
     }

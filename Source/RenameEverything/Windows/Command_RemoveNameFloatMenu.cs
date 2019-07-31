@@ -5,6 +5,7 @@ using System.Text;
 using UnityEngine;
 using Verse;
 using RimWorld;
+using Multiplayer.API;
 
 namespace RenameEverything
 {
@@ -17,7 +18,13 @@ namespace RenameEverything
             foreach (var pawnRenamablesPair in allPawnRenamables)
                 foreach (var renamable in pawnRenamablesPair.Second)
                     if (renamable.Named)
-                        yield return new FloatMenuOption(FloatMenuOptionLabel(pawnRenamablesPair.First, renamable.parent), () => renamable.Named = false);
+                        yield return new FloatMenuOption(FloatMenuOptionLabel(pawnRenamablesPair.First, renamable.parent), () => RemoveNameAction(renamable));
+        }
+
+        [SyncMethod]
+        private void RemoveNameAction(CompRenamable renamableComp)
+        {
+            renamableComp.Named = false;
         }
 
     }

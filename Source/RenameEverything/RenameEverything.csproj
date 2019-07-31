@@ -62,13 +62,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Gizmos\Command_RemoveNameFloatMenu.cs" />
-    <Compile Include="Gizmos\Command_RecolourLabel.cs" />
-    <Compile Include="Gizmos\Command_Renamable.cs" />
-    <Compile Include="Gizmos\Command_RecolourLabelFloatMenu.cs" />
-    <Compile Include="Gizmos\Command_RenameFloatMenu.cs" />
-    <Compile Include="Gizmos\Command_RenamablesFromPawn.cs" />
-    <Compile Include="Gizmos\Command_Rename.cs" />
+    <Compile Include="Windows\Command_RemoveNameFloatMenu.cs" />
+    <Compile Include="Windows\Command_RecolourLabel.cs" />
+    <Compile Include="Windows\Command_Renamable.cs" />
+    <Compile Include="Windows\Command_RecolourLabelFloatMenu.cs" />
+    <Compile Include="Windows\Command_RenameFloatMenu.cs" />
+    <Compile Include="Windows\Command_RenamablesFromPawn.cs" />
+    <Compile Include="Windows\Command_Rename.cs" />
     <Compile Include="Comps\CompProperties_Renamable.cs" />
     <Compile Include="HarmonyPatches\Patch_GenMapUI.cs" />
     <Compile Include="HarmonyPatches\Infused\Patch_Infused_GenMapUI_DrawThingLabel_Patch.cs" />

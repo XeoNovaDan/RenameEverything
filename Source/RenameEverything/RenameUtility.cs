@@ -8,6 +8,7 @@ using Verse;
 using RimWorld;
 using Harmony;
 using ColourPicker;
+using Multiplayer.API;
 
 namespace RenameEverything
 {
@@ -51,7 +52,7 @@ namespace RenameEverything
                         defaultDesc = "RenameEverything.AllowMerging_Description".Translate(),
                         icon = TexButton.AllowMergingTex,
                         isActive = () => renamableComp.allowMerge,
-                        toggleAction = () => renamableComp.allowMerge = !renamableComp.allowMerge
+                        toggleAction = () => AllowMergeGizmoToggleAction(renamableComp),
                     };
 
                 // Remove name
@@ -61,11 +62,23 @@ namespace RenameEverything
                         defaultLabel = "RenameEverything.RemoveName".Translate(),
                         defaultDesc = "RenameEverything.RemoveName_Description".Translate(filler),
                         icon = TexButton.DeleteX,
-                        action = () => renamableComp.Named = false,
+                        action = () => RemoveNameGizmoAction(renamableComp),
                     };
             }
         }
 
+        [SyncMethod]
+        private static void AllowMergeGizmoToggleAction(CompRenamable renamableComp)
+        {
+            renamableComp.allowMerge = !renamableComp.allowMerge;
+        }
+
+        [SyncMethod]
+        private static void RemoveNameGizmoAction(CompRenamable renamableComp)
+        {
+            renamableComp.Named = false;
+        }
+        
         public static IEnumerable<CompRenamable> GetRenamableEquipmentComps(Pawn pawn)
         {
             // Equipment

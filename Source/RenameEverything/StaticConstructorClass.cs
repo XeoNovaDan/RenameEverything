@@ -5,6 +5,7 @@ using System.Text;
 using UnityEngine;
 using Verse;
 using RimWorld;
+using Multiplayer.API;
 
 namespace RenameEverything
 {
@@ -15,6 +16,7 @@ namespace RenameEverything
 
         static StaticConstructorClass()
         {
+            // Add CompRenamable to ThingDefs
             foreach (var tDef in DefDatabase<ThingDef>.AllDefs.Where(t => typeof(ThingWithComps).IsAssignableFrom(t.thingClass)))
             {
                 if (tDef.comps == null)
@@ -40,6 +42,10 @@ namespace RenameEverything
                 else if (!typeof(Pawn).IsAssignableFrom(tDef.thingClass) && !typeof(Corpse).IsAssignableFrom(tDef.thingClass) && !typeof(MinifiedThing).IsAssignableFrom(tDef.thingClass))
                     tDef.comps.Add(new CompProperties_Renamable());
             }
+
+            // Multiplayer compatibility
+            if (MP.enabled)
+                MP.RegisterAll();
         }
 
     }
