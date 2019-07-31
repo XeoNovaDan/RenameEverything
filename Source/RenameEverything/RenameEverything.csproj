@@ -41,6 +41,11 @@
       <HintPath>..\..\1.0\Assemblies\0Harmony.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="0MultiplayerAPI, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\1.0\Assemblies\0MultiplayerAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
@@ -66,7 +71,7 @@
     <Compile Include="Gizmos\Command_Rename.cs" />
     <Compile Include="Comps\CompProperties_Renamable.cs" />
     <Compile Include="HarmonyPatches\Patch_GenMapUI.cs" />
-    <Compile Include="HarmonyPatches\Patch_Infused_GenMapUI_DrawThingLabel_Patch.cs" />
+    <Compile Include="HarmonyPatches\Infused\Patch_Infused_GenMapUI_DrawThingLabel_Patch.cs" />
     <Compile Include="HarmonyPatches\Patch_Thing.cs" />
     <Compile Include="HarmonyPatches\Patch_WITab_Caravan_Gear.cs" />
     <Compile Include="HarmonyPatches\Patch_CaravanItemsTabUtility.cs" />
