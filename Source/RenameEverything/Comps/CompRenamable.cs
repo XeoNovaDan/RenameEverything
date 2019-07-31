@@ -77,6 +77,24 @@ namespace RenameEverything
             return RenameUtility.GetRenamableCompGizmos(this);
         }
 
+        public override void PostSplitOff(Thing piece)
+        {
+            var pieceCompRenamable = piece.TryGetComp<CompRenamable>();
+
+            // Just a paranoid check
+            if (pieceCompRenamable != null)
+            {
+                pieceCompRenamable.Name = Name;
+                pieceCompRenamable.labelColour = labelColour;
+                pieceCompRenamable.cachedLabel = cachedLabel;
+                pieceCompRenamable.allowMerge = allowMerge;
+            }
+            else
+            {
+                Log.Warning($"pieceCompRenamable (piece={piece}) is null");
+            }
+        }
+
         public override void PostExposeData()
         {
             Scribe_Values.Look(ref cachedLabel, "cachedLabel", String.Empty);
