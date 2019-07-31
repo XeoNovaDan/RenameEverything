@@ -12,11 +12,11 @@ namespace RenameEverything
     public class RenameEverythingSettings : ModSettings
     {
 
+        public static bool showNameOnGround = true;
         public static bool appendCachedLabel = false;
         public static bool onlyAppendInThingHolder = true;
         public static bool pawnWeaponRenameGizmos = true;
 
-        public static bool offHandRenameGizmos = true;
         public static bool dualWieldInspectString = true;
 
         public void DoWindowContents(Rect wrect)
@@ -28,18 +28,22 @@ namespace RenameEverything
             Text.Font = GameFont.Small;
             Text.Anchor = TextAnchor.UpperLeft;
 
-            // Append original label to weapon's name
+            // Show name when on the ground
+            options.Gap();
+            options.CheckboxLabeled("RenameEverything.ShowNameOnGround".Translate(), ref showNameOnGround, "RenameEverything.ShowNameOnGround_Tooltip".Translate());
+
+            // Append original label to an object's name
             options.Gap();
             options.CheckboxLabeled("RenameEverything.AppendCachedLabel".Translate(), ref appendCachedLabel, "RenameEverything.AppendCachedLabel_Tooltip".Translate());
 
-            // Append original label to weapon's name (grey out if appendCachedLabel is false)
+            // Only append when equipped (grey out if appendCachedLabel is false)
             if (!appendCachedLabel)
                 GUI.color = Color.grey;
             options.Gap();
             options.CheckboxLabeled("RenameEverything.AppendCachedLabelInThingHolder".Translate(), ref onlyAppendInThingHolder, "RenameEverything.AppendCachedLabelInThingHolder_Tooltip".Translate());
             GUI.color = defaultColor;
 
-            // Show weapon renaming buttons on pawns
+            // Show equipment renaming buttons on pawns
             options.Gap();
             options.CheckboxLabeled("RenameEverything.ShowRenameGizmosOnPawns".Translate(), ref pawnWeaponRenameGizmos, "RenameEverything.ShowRenameGizmosOnPawns_Tooltip".Translate());
 
@@ -60,18 +64,12 @@ namespace RenameEverything
 
             else
             {
-                // Show off-hand weapon renaming buttons on pawns
-                if (!pawnWeaponRenameGizmos)
-                    GUI.color = Color.grey;
-                options.Gap();
-                options.CheckboxLabeled("RenameEverything.ShowOffHandRenameGizmosOnPawns".Translate(), ref offHandRenameGizmos, "RenameEverything.ShowOffHandRenameGizmosOnPawns_Tooltip".Translate());
-                GUI.color = defaultColor;
-
                 // Show both weapon names when dual wielding
                 options.Gap();
                 options.CheckboxLabeled("RenameEverything.ShowBothWeaponNamesDualWield".Translate(), ref dualWieldInspectString, "RenameEverything.ShowBothWeaponNamesDualWield_Tooltip".Translate());
             }
             #endregion
+
             // Finish
             options.End();
             Mod.GetSettings<RenameEverythingSettings>().Write();
@@ -80,11 +78,11 @@ namespace RenameEverything
 
         public override void ExposeData()
         {
+            Scribe_Values.Look(ref showNameOnGround, "showNameOnGround", true);
             Scribe_Values.Look(ref appendCachedLabel, "appendCachedLabel", false);
             Scribe_Values.Look(ref onlyAppendInThingHolder, "onlyAppendInThingHolder", true);
             Scribe_Values.Look(ref pawnWeaponRenameGizmos, "pawnWeaponRenameGizmos", true);
 
-            Scribe_Values.Look(ref offHandRenameGizmos, "offHandRenameGizmos", true);
             Scribe_Values.Look(ref dualWieldInspectString, "dualWieldInspectString", true);
         }
 

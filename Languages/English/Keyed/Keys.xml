@@ -4,7 +4,10 @@
     <!-- Settings -->
     <RenameEverything.SettingsCategory>Rename Everything</RenameEverything.SettingsCategory>
 
-    <RenameEverything.AppendCachedLabel>Append original label to object's name</RenameEverything.AppendCachedLabel>
+    <RenameEverything.ShowNameOnGround>Show name when on the ground</RenameEverything.ShowNameOnGround>
+    <RenameEverything.ShowNameOnGround_Tooltip>When a named object is on the ground, a shortened version of its name will show above its quality label.</RenameEverything.ShowNameOnGround_Tooltip>
+
+    <RenameEverything.AppendCachedLabel>Append original label to an object's name</RenameEverything.AppendCachedLabel>
     <RenameEverything.AppendCachedLabel_Tooltip>When you rename an object, its original label will be added afterwards in brackets. For example, if you named some frag grenades 'The Holy Hand Grenade of Antioch', the weapon's label will be 'The Holy Hand Grenade of Antioch (Frag grenades)'.</RenameEverything.AppendCachedLabel_Tooltip>
 
     <RenameEverything.AppendCachedLabelInThingHolder>Only append when equipped</RenameEverything.AppendCachedLabelInThingHolder>

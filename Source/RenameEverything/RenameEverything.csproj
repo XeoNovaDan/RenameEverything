@@ -65,6 +65,10 @@
     <Compile Include="Gizmos\Command_RenamablesFromPawn.cs" />
     <Compile Include="Gizmos\Command_Rename.cs" />
     <Compile Include="Comps\CompProperties_Renamable.cs" />
+    <Compile Include="HarmonyPatches\Patch_GenMapUI.cs" />
+    <Compile Include="HarmonyPatches\Patch_Infused_GenMapUI_DrawThingLabel_Patch.cs" />
+    <Compile Include="HarmonyPatches\Patch_Thing.cs" />
+    <Compile Include="HarmonyPatches\Patch_WITab_Caravan_Gear.cs" />
     <Compile Include="HarmonyPatches\Patch_CaravanItemsTabUtility.cs" />
     <Compile Include="HarmonyPatches\Patch_MinifiedThing.cs" />
     <Compile Include="HarmonyPatches\Patch_TransferableUIUtility.cs" />

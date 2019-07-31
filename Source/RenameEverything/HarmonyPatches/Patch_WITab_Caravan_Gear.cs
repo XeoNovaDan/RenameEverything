@@ -14,13 +14,13 @@ using ColourPicker;
 namespace RenameEverything
 {
 
-    public static class Patch_CaravanItemsTabUtility
+    public static class Patch_WITab_Caravan_Gear
     {
 
-        [HarmonyPatch(typeof(CaravanItemsTabUtility))]
-        [HarmonyPatch("DoRow")]
-        [HarmonyPatch(new Type[] { typeof(Rect), typeof(TransferableImmutable), typeof(Caravan) })]
-        public static class Patch_DrawThingRow
+        [HarmonyPatch(typeof(WITab_Caravan_Gear))]
+        [HarmonyPatch("DoInventoryRow")]
+        [HarmonyPatch(new Type[] { typeof(Rect), typeof(Thing) })]
+        public static class Patch_DoInventoryRow
         {
 
             public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
@@ -31,9 +31,8 @@ namespace RenameEverything
                 int wordWraps = 0;
 
                 var infoCardButtonInfo = AccessTools.Method(typeof(Widgets), nameof(Widgets.InfoCardButton), new Type[] { typeof(float), typeof(float), typeof(Thing) });
-                var anyThingInfo = AccessTools.Property(typeof(Transferable), nameof(Transferable.AnyThing)).GetGetMethod();
 
-                var doRenameFloatMenuButtonInfo = AccessTools.Method(typeof(Patch_DrawThingRow), nameof(DoRenameFloatMenuButton));
+                var doRenameFloatMenuButtonInfo = AccessTools.Method(typeof(Patch_DoInventoryRow), nameof(DoRenameFloatMenuButton));
 
                 for (int i = 0; i < instructionList.Count; i++)
                 {
@@ -43,14 +42,14 @@ namespace RenameEverything
                     if (instruction.opcode == OpCodes.Call && instruction.operand == infoCardButtonInfo)
                     {
                         yield return instruction;
-                        yield return new CodeInstruction(OpCodes.Ldloca_S, 0);
-                        yield return new CodeInstruction(OpCodes.Ldarg_0);
-                        yield return new CodeInstruction(OpCodes.Ldarg_1);
-                        instruction = new CodeInstruction(OpCodes.Call, doRenameFloatMenuButtonInfo);
+                        yield return new CodeInstruction(OpCodes.Ldloca_S, 0); // ref rect2
+                        yield return new CodeInstruction(OpCodes.Ldarg_1); // rect
+                        yield return new CodeInstruction(OpCodes.Ldarg_2); // thing
+                        instruction = new CodeInstruction(OpCodes.Call, doRenameFloatMenuButtonInfo); // DoCaravanRenameThingFloatMenuButton(ref rect2, rect, thing)
                     }
 
                     // Reduce width of the label's rect to reduce risk of text clipping
-                    if (instruction.opcode == OpCodes.Ldc_R4 && (float)instruction.operand == 300)
+                    if (instruction.opcode == OpCodes.Ldc_R4 && (float)instruction.operand == 250)
                     {
                         yield return instruction;
                         yield return new CodeInstruction(OpCodes.Ldc_R4, 24);
@@ -68,9 +67,8 @@ namespace RenameEverything
                         }
                         else
                         {
-                            yield return new CodeInstruction(OpCodes.Ldarg_1); // thing
-                            yield return new CodeInstruction(OpCodes.Callvirt, anyThingInfo); // thing.AnyThing
-                            instruction = new CodeInstruction(OpCodes.Call, RenameUtility.ChangeGUIColourPreLabelDraw_Thing_Info); // ChangeGUIColourPreLabelDraw(thing.AnyThing)
+                            yield return new CodeInstruction(OpCodes.Ldarg_2); // thing
+                            instruction = new CodeInstruction(OpCodes.Call, RenameUtility.ChangeGUIColourPreLabelDraw_Thing_Info); // ChangeGUIColourPreLabelDraw(thing)
                         }
                     }
 
@@ -78,10 +76,10 @@ namespace RenameEverything
                 }
             }
 
-            private static void DoRenameFloatMenuButton(ref Rect rect2, Rect rect, TransferableImmutable thing)
+            private static void DoRenameFloatMenuButton(ref Rect rect2, Rect rect, Thing thing)
             {
                 rect2.width -= 24;
-                var renamableComp = thing.AnyThing.TryGetComp<CompRenamable>();
+                var renamableComp = thing.TryGetComp<CompRenamable>();
                 if (renamableComp != null && Widgets.ButtonImage(new Rect(rect2.width - 24, rect.height - 24, 24, 24), TexButton.RenameTex))
                 {
                     Find.WindowStack.Add(new FloatMenu(RenameUtility.CaravanRenameThingButtonFloatMenuOptions(renamableComp).ToList()));

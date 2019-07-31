@@ -15,7 +15,7 @@ namespace RenameEverything
         private string cachedLabel = String.Empty;
         private string _name = String.Empty;
         public Color labelColour = Color.white;
-        public bool allowMerge;
+        public bool allowMerge = false;
 
         public CompProperties_Renamable Props => (CompProperties_Renamable)props;
 
@@ -82,7 +82,7 @@ namespace RenameEverything
             Scribe_Values.Look(ref cachedLabel, "cachedLabel", String.Empty);
             Scribe_Values.Look(ref _name, "name", String.Empty);
             Scribe_Values.Look(ref labelColour, "labelColour", Color.white);
-            Scribe_Values.Look(ref allowMerge, "allowMerge");
+            Scribe_Values.Look(ref allowMerge, "allowMerge", false);
 
             base.PostExposeData();
         }

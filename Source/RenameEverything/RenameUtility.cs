@@ -7,12 +7,15 @@ using UnityEngine;
 using Verse;
 using RimWorld;
 using Harmony;
+using ColourPicker;
 
 namespace RenameEverything
 {
 
     public static class RenameUtility
     {
+
+        private const int MaxTextWidth = 65;
 
         private static Color cachedGUIColour;
 
@@ -107,6 +110,44 @@ namespace RenameEverything
         }
 
         public static MethodInfo ChangeGUIColourPostLabelDraw_Info => AccessTools.Method(typeof(RenameUtility), nameof(ChangeGUIColourPostLabelDraw));
+
+        public static IEnumerable<FloatMenuOption> CaravanRenameThingButtonFloatMenuOptions(CompRenamable renamableComp)
+        {
+            // Rename
+            yield return new FloatMenuOption(renamableComp.Props.renameTranslationKey.Translate(), () => Find.WindowStack.Add(new Dialog_RenameThings(renamableComp)));
+
+            // Recolour
+            yield return new FloatMenuOption("RenameEverything.RecolourLabel".Translate(), () => Find.WindowStack.Add(new Dialog_ColourPicker(renamableComp.labelColour, c => renamableComp.labelColour = c)));
+
+            // Remove name
+            if (renamableComp.Named)
+                yield return new FloatMenuOption("RenameEverything.RemoveName".Translate(), () => renamableComp.Named = false);
+        }
+
+        public static void DrawThingName(Thing thing)
+        {
+            if (RenameEverythingSettings.showNameOnGround && thing.TryGetComp<CompRenamable>() is CompRenamable renamableComp && renamableComp.Named)
+            {
+                // Do background
+                Text.Font = GameFont.Tiny;
+                var screenPos = GenMapUI.LabelDrawPosFor(thing, -0.4f);
+                string text = Text.CalcSize(renamableComp.Name).x <= MaxTextWidth ? renamableComp.Name : renamableComp.Name.Shorten().Truncate(MaxTextWidth);
+                float x = Text.CalcSize(text).x;
+                var backgroundRect = new Rect(screenPos.x - x / 2 - 4, screenPos.y, x + 8, 12);
+                GUI.DrawTexture(backgroundRect, TexUI.GrayTextBG);
+
+                // Do label
+                Text.Anchor = TextAnchor.UpperCenter;
+                ChangeGUIColourPreLabelDraw(thing);
+                var textRect = new Rect(screenPos.x - x / 2, screenPos.y - 3, x, 999);
+                Widgets.Label(textRect, text);
+                ChangeGUIColourPostLabelDraw();
+
+                // Finish off
+                Text.Anchor = TextAnchor.UpperLeft;
+                Text.Font = GameFont.Small;
+            }
+        }
 
     }
 

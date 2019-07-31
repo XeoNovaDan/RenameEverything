@@ -31,6 +31,16 @@ namespace RenameEverything
                 else
                     Log.Error("Could not find type Sandy_Detailed_RPG_Inventory.Sandy_Detailed_RPG_GearTab in RPG Style Inventory");
             }
+
+            // Infused
+            if (ModCompatibilityCheck.Infused)
+            {
+                var infusedThingLabelPatch = GenTypes.GetTypeInAnyAssemblyNew("Infused.GenMapUI_DrawThingLabel_Patch", "Infused");
+                if (infusedThingLabelPatch != null)
+                    RenameEverything.HarmonyInstance.Patch(AccessTools.Method(infusedThingLabelPatch, "Postfix"), transpiler: new HarmonyMethod(typeof(Patch_Infused_GenMapUI_DrawThingLabel_Patch.ManualPatch_Postfix), "Transpiler"));
+                else
+                    Log.Error("Could not find type Infused.GenMapUI_DrawThingLabel_Patch in Infused");
+            }
         }
 
     }
