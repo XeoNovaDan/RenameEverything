@@ -1,3 +1,4 @@
 E:\Documents\GitHub\RenameEverything\1.0\Assemblies\RenameEverything.dll
 E:\Documents\GitHub\RenameEverything\Source\RenameEverything\obj\Debug\RenameEverything.csproj.CoreCompileInputs.cache
 E:\Documents\GitHub\RenameEverything\Source\RenameEverything\obj\Debug\RenameEverything.dll
+E:\Documents\GitHub\RenameEverything\Source\RenameEverything\obj\Debug\RenameEverything.csprojAssemblyReference.cache

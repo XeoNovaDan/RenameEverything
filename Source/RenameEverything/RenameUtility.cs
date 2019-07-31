@@ -126,7 +126,7 @@ namespace RenameEverything
 
         public static void DrawThingName(Thing thing)
         {
-            if (RenameEverythingSettings.showNameOnGround && thing.TryGetComp<CompRenamable>() is CompRenamable renamableComp && renamableComp.Named)
+            if (CanDrawThingName(thing, out CompRenamable renamableComp))
             {
                 // Do background
                 Text.Font = GameFont.Tiny;
@@ -147,6 +147,17 @@ namespace RenameEverything
                 Text.Anchor = TextAnchor.UpperLeft;
                 Text.Font = GameFont.Small;
             }
+        }
+
+        public static bool CanDrawThingName(Thing t, out CompRenamable renamableComp)
+        {
+            renamableComp = t.TryGetComp<CompRenamable>();
+            return renamableComp != null && renamableComp.Named && RenameEverythingSettings.showNameOnGround && !typeof(Building).IsAssignableFrom(t.GetType());
+        }
+
+        public static bool CanDrawThingName(Thing t)
+        {
+            return CanDrawThingName(t, out CompRenamable c);
         }
 
     }

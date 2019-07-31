@@ -23,7 +23,7 @@ namespace RenameEverything
             public static void Postfix(Thing __instance)
             {
                 // If the thing doesn't have a GUI overlay for stack count or quality but is renamable and named, do our GUI overlay
-                if (RenameEverythingSettings.showNameOnGround && __instance.def.stackLimit <= 1 && !__instance.def.HasComp(typeof(CompQuality)) && __instance.TryGetComp<CompRenamable>() != null)
+                if (Find.CameraDriver.CurrentZoom == CameraZoomRange.Closest && RenameUtility.CanDrawThingName(__instance) && __instance.def.stackLimit <= 1 && !__instance.def.HasComp(typeof(CompQuality)))
                 {
                     RenameUtility.DrawThingName(__instance);
                 }

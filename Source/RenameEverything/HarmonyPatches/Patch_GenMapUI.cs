@@ -47,7 +47,7 @@ namespace RenameEverything
 
             public static float AdjustPositionIfNamed(float original, Thing thing)
             {
-                if (RenameEverythingSettings.showNameOnGround && thing.TryGetComp<CompRenamable>() is CompRenamable renamableComp && renamableComp.Named)
+                if (RenameUtility.CanDrawThingName(thing))
                     return original - 0.26f;
                 return original;
             }
