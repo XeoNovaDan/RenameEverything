@@ -36,8 +36,8 @@ namespace RenameEverything
                 else if (typeof(Plant).IsAssignableFrom(tDef.thingClass))
                     tDef.comps.Add(new CompProperties_Renamable() { renameTranslationKey = "RenameEverything.RenamePlant", inspectStringTranslationKey = "RenameEverything.Plant" });
 
-                // Not a pawn or a corpse
-                else if (!typeof(Pawn).IsAssignableFrom(tDef.thingClass) && !typeof(Corpse).IsAssignableFrom(tDef.thingClass))
+                // Not a pawn, corpse or minified building
+                else if (!typeof(Pawn).IsAssignableFrom(tDef.thingClass) && !typeof(Corpse).IsAssignableFrom(tDef.thingClass) && !typeof(MinifiedThing).IsAssignableFrom(tDef.thingClass))
                     tDef.comps.Add(new CompProperties_Renamable());
             }
         }

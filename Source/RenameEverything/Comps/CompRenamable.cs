@@ -15,7 +15,7 @@ namespace RenameEverything
         private string cachedLabel = String.Empty;
         private string _name = String.Empty;
         public Color labelColour = Color.white;
-        private bool allowMerge;
+        public bool allowMerge;
 
         public CompProperties_Renamable Props => (CompProperties_Renamable)props;
 
@@ -74,49 +74,7 @@ namespace RenameEverything
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
-            string filler = Props.inspectStringTranslationKey.Translate().UncapitalizeFirst();
-            // Rename
-            yield return new Command_Rename()
-            {
-                renamable = this,
-                defaultLabel = Props.renameTranslationKey.Translate(),
-                defaultDesc = "RenameEverything.RenameGizmo_Description".Translate(filler),
-                icon = TexButton.RenameTex,
-                hotKey = KeyBindingDefOf.Misc1,
-            };
-            
-            // Recolour label
-            yield return new Command_RecolourLabel()
-            {
-                renamable = this,
-                defaultLabel = "RenameEverything.RecolourLabel".Translate(),
-                defaultDesc = "RenameEverything.RecolourLabel_Description".Translate(filler),
-                icon = TexButton.RecolourTex
-            };
-
-            if (Named || Coloured)
-            {
-                // Allow merging
-                if (parent.def.stackLimit > 1)
-                    yield return new Command_Toggle()
-                    {
-                        defaultLabel = "RenameEverything.AllowMerging".Translate(),
-                        defaultDesc = "RenameEverything.AllowMerging_Description".Translate(),
-                        icon = TexButton.AllowMergingTex,
-                        isActive = () => allowMerge,
-                        toggleAction = () => allowMerge = !allowMerge
-                    };
-
-                // Remove name
-                if (Named)
-                    yield return new Command_Action()
-                    {
-                        defaultLabel = "RenameEverything.RemoveName".Translate(),
-                        defaultDesc = "RenameEverything.RemoveName_Description".Translate(filler),
-                        icon = TexButton.DeleteX,
-                        action = () => Named = false,
-                    };
-            }
+            return RenameUtility.GetRenamableCompGizmos(this);
         }
 
         public override void PostExposeData()
