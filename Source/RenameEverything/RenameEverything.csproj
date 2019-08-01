@@ -62,6 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HarmonyPatches\RPGStyleInventory\Patch_RPGStyleInventory_Sandy_Detailed_RPG_GearTab.cs" />
     <Compile Include="Windows\Command_RemoveNameFloatMenu.cs" />
     <Compile Include="Windows\Command_RecolourLabel.cs" />
     <Compile Include="Windows\Command_Renamable.cs" />

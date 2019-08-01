@@ -27,10 +27,25 @@ namespace RenameEverything
                 var wordWrapInfo = AccessTools.Property(typeof(Text), nameof(Text.WordWrap)).GetSetMethod();
                 int wordWraps = 0;
 
+                var infoCardButtonInfo = AccessTools.Method(typeof(Widgets), nameof(Widgets.InfoCardButton), new Type[] { typeof(float), typeof(float), typeof(Thing) });
+
+                var doRenameFloatMenuButtonInfo = AccessTools.Method(typeof(Patch_DrawThingRow), nameof(DoRenameFloatMenuButton));
+
                 for (int i = 0; i < instructionList.Count; i++)
                 {
                     var instruction = instructionList[i];
 
+                    // Do our 'renamable gizmos substitute' button after the info card button
+                    if (instruction.opcode == OpCodes.Call && instruction.operand == infoCardButtonInfo)
+                    {
+                        yield return instruction;
+                        yield return new CodeInstruction(OpCodes.Ldloca_S, 0);
+                        yield return new CodeInstruction(OpCodes.Ldarga_S, 1);
+                        yield return new CodeInstruction(OpCodes.Ldarg_3);
+                        instruction = new CodeInstruction(OpCodes.Call, doRenameFloatMenuButtonInfo);
+                    }
+
+                    // Label recolouring
                     if (instruction.opcode == OpCodes.Call && instruction.operand == wordWrapInfo)
                     {
                         wordWraps++;
@@ -47,6 +62,16 @@ namespace RenameEverything
                     }
 
                     yield return instruction;
+                }
+            }
+
+            private static void DoRenameFloatMenuButton(ref Rect rect, ref float y, Thing thing)
+            {
+                rect.width -= 24;
+                var renamableComp = thing.TryGetComp<CompRenamable>();
+                if (renamableComp != null && Widgets.ButtonImage(new Rect(rect.width - 24, rect.y + y, 24, 24), TexButton.RenameTex))
+                {
+                    Find.WindowStack.Add(new FloatMenu(RenameUtility.CaravanRenameThingButtonFloatMenuOptions(renamableComp).ToList()));
                 }
             }
 

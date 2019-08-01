@@ -16,54 +16,6 @@ namespace RenameEverything
     {
 
         [HarmonyPatch(typeof(Pawn))]
-        [HarmonyPatch(nameof(Pawn.GetGizmos))]
-        public static class Patch_GetGizmos
-        {
-
-            public static void Postfix(Pawn __instance, ref IEnumerable<Gizmo> __result)
-            {
-                // Add weapon rename gizmos to pawn if they have any equipment that has CompRenamable
-                if (RenameEverythingSettings.pawnWeaponRenameGizmos)
-                {
-                    var renamables = RenameUtility.GetRenamableEquipmentComps(__instance);
-                    if (renamables.Any())
-                    {
-                        var renameGizmo = new Command_RenameFloatMenu()
-                        {
-                            pawnRenamables = new Pair<Pawn, List<CompRenamable>>(__instance, renamables.ToList()),
-                            defaultLabel = "RenameEverything.RenameEquipment".Translate(),
-                            defaultDesc = "RenameEverything.RenameEquipment_Description".Translate(),
-                            icon = TexButton.RenameTex,
-                        };
-                        __result = __result.Add(renameGizmo);
-
-                        var recolourGizmo = new Command_RecolourLabelFloatMenu()
-                        {
-                            pawnRenamables = new Pair<Pawn, List<CompRenamable>>(__instance, renamables.ToList()),
-                            defaultLabel = "RenameEverything.RecolourLabel".Translate(),
-                            defaultDesc = "RenameEverything.RecolourEquipmentLabel_Description".Translate(),
-                            icon = TexButton.RecolourTex,
-                        };
-                        __result = __result.Add(recolourGizmo);
-
-                        if (renamables.Any(r => r.Named))
-                        {
-                            var removeNameGizmo = new Command_RemoveNameFloatMenu()
-                            {
-                                pawnRenamables = new Pair<Pawn, List<CompRenamable>>(__instance, renamables.ToList()),
-                                defaultLabel = "RenameEverything.RemoveName".Translate(),
-                                defaultDesc = "RenameEverything.RemoveEquipmentName_Description".Translate(),
-                                icon = TexButton.DeleteX,
-                            };
-                            __result = __result.Add(removeNameGizmo);
-                        }
-                    }
-                }
-            }
-
-        }
-
-        [HarmonyPatch(typeof(Pawn))]
         [HarmonyPatch(nameof(Pawn.GetInspectString))]
         public static class Patch_GetInspectString
         {
